@@ -1,0 +1,102 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "release": "v0.1.1",
+  "stand": "2026-05-04",
+  "items": [
+    {
+      "key": "timestamped_extraction",
+      "label": "(1) Timestamped extraction",
+      "status": "CLOSED",
+      "artefact": "data/coefficient_readout_blindness.json",
+      "finding": "readout-commit hash precedes landings-commit hash in the release pin v0.1.0; verification test tests/test_readout_blindness_protocol.py"
+    },
+    {
+      "key": "target_blind_readout",
+      "label": "(2) Target-blind readout",
+      "status": "CLOSED",
+      "artefact": "src/verify_coefficient_readout.py",
+      "finding": "operator T, projector supports, readout formulas defined without reference to $\\sin^2\\theta_W$, $1/4$, $2/3$, $\\Lambda_t$, $\\Lambda_s$ targets"
+    },
+    {
+      "key": "random_alphabet_null",
+      "label": "(3) Random-alphabet null",
+      "status": "CLOSED",
+      "artefact": "src/reduction_null_v2.py + src/run_look_elsewhere.py + src/alphabet_shuffled_null.py",
+      "finding": "uniform-5-tuple null on $n=10^{5}$ trials: zero joint-pass hits ($p<3\\!\\times\\!10^{-5}$); 3000 small-rational 5-tuple null gives joint chance probability $<\\!1\\%$; alphabet-shuffled label-permutation null on the $5!{=}120$ permutations of the canonical measured values isolates the canonical assignment uniquely ($p_{\\rm shuffle}=1/120\\!\\approx\\!8.3\\!\\times\\!10^{-3}$)"
+    },
+    {
+      "key": "target_family_null",
+      "label": "(4) Coefficient-perturbation null",
+      "status": "CLOSED",
+      "artefact": "src/perturb_coefficients_null.py + data/coefficient_perturbation_null.json",
+      "finding": "$\\pm\\!1\\%$ perturbation of each readout coefficient breaks $\\ge\\!7$/$10$ landing rows out of the PRECISE band; the fine-tuning of the measured tuple is not an arbitrary choice"
+    },
+    {
+      "key": "holdout_observables",
+      "label": "(5) Holdout observables (L9/L10)",
+      "status": "CLOSED",
+      "artefact": "data/landings_expected.json (L9, L10 added after the original eight-row table)",
+      "finding": "$\\Lambda_t\\!=\\!\\alpha_\\xi^2\\!=\\!81/100$ and $\\Lambda_s\\!=\\!-\\gamma^2/2\\!=\\!-1/200$ predicted in $\\mathcal R$ before lattice verification in companion P4; both close PRECISE/EXACT post-readout"
+    },
+    {
+      "key": "dependency_graph",
+      "label": "(6) Per-landing dependency graph",
+      "status": "CLOSED",
+      "artefact": "outputs/system_R_audit_summary.json (dependency_graph field)",
+      "finding": "L7 uses only $\\{\\alpha_\\xi,\\gamma\\}$ (no alphabet letters), L9/L10 each use a single coefficient; no landing depends on the full 5-tuple via pure-letter overlap"
+    }
+  ],
+  "dependency_graph": {
+    "L1_alpha_dn": [
+      "axi",
+      "beta_pi",
+      "eps_sync2",
+      "gamma"
+    ],
+    "L2_Omega_DM": [
+      "axi",
+      "eps_sync2",
+      "N_gen"
+    ],
+    "L3_w_DE": [
+      "eps_sync2",
+      "gamma"
+    ],
+    "L4_alpha_s": [
+      "gamma",
+      "beta_pi",
+      "4/pi"
+    ],
+    "L5_alpha_cl": [
+      "axi",
+      "beta_pi",
+      "D_Omega",
+      "gamma",
+      "G_NET"
+    ],
+    "L6_sin2thetaW": [
+      "beta_pi",
+      "gamma",
+      "pi/4"
+    ],
+    "L7_BH": [
+      "axi",
+      "gamma"
+    ],
+    "L8_Einstein_gap": [
+      "gamma",
+      "pi/4",
+      "D_Omega"
+    ],
+    "L9_Lambda_t": [
+      "axi"
+    ],
+    "L10_Lambda_s": [
+      "gamma"
+    ]
+  }
+}

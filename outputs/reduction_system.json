@@ -1,0 +1,83 @@
+{
+  "measured_coefficients": {
+    "alpha_xi": 0.90082,
+    "D_Omega": 0.83996,
+    "beta_pi": 0.93791,
+    "gamma": 0.10021,
+    "eps_sync2": 0.05,
+    "N_gen": 3
+  },
+  "conditions": [
+    {
+      "label": "C1",
+      "identity": "alpha_xi + gamma = 1",
+      "residual_pct": 0.10299999999998644
+    },
+    {
+      "label": "C2",
+      "identity": "D_Omega = beta_pi - gamma",
+      "residual_pct": 0.26906043144912134
+    },
+    {
+      "label": "C3",
+      "identity": "eps_sync2 = gamma / 2",
+      "residual_pct": 0.20999999999998797
+    },
+    {
+      "label": "C4",
+      "identity": "gamma = 1 / (N_gen^2 + 1)",
+      "residual_pct": 0.20955992415925356
+    },
+    {
+      "label": "C5",
+      "identity": "beta_pi = 15/16",
+      "residual_pct": 0.04371421564969149
+    }
+  ],
+  "max_residual_pct": 0.26906043144912134,
+  "threshold_pct": 0.3,
+  "all_within_threshold": true,
+  "rational_reduction": {
+    "alpha_xi": [
+      9,
+      10
+    ],
+    "D_Omega": [
+      67,
+      80
+    ],
+    "beta_pi": [
+      15,
+      16
+    ],
+    "gamma": [
+      1,
+      10
+    ],
+    "eps_sync2": [
+      1,
+      20
+    ]
+  },
+  "bh_quarter": {
+    "lhs_numerator": 1,
+    "lhs_denominator": 4,
+    "target_numerator": 1,
+    "target_denominator": 4,
+    "algebraically_exact_in_Q": true
+  },
+  "bh_integer_uniqueness": {
+    "scan_range": [
+      -10,
+      10
+    ],
+    "integer_solutions_for_quarter": [
+      -3,
+      3
+    ],
+    "positive_solutions": [
+      3
+    ],
+    "unique_positive_solution": 3
+  }
+}

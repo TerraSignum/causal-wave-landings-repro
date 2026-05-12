@@ -1,0 +1,52 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Coefficient-perturbation null. Replaces the five measured causal-wave coefficients with random uniform draws from [0.02, 0.99]^5 and re-evaluates the three EXACT-tier landing forms. Reports the probability that random coefficients reproduce all three EXACT hits or at least one.",
+  "stand": "2026-04-26",
+  "source_pipeline": "outputs_causal_wave_universality/coefficient_perturbation_null.json",
+  "n_random_trials": 200,
+  "random_coefficient_range": [
+    0.02,
+    0.99
+  ],
+  "rng_provenance": {
+    "rng_implementation_upstream": "numpy.random.default_rng (full enumeration null over the 222954-element search space)",
+    "rng_implementation_local": "stdlib random.Random (rigid-baseline-formula null only; complements but does not reproduce the upstream)",
+    "rng_seed": 0,
+    "draw_distribution": "uniform[0.02, 0.99]^5",
+    "trials": 200,
+    "regenerator_script": "src/perturb_coefficients_null.py",
+    "regenerator_invocation": "python src/perturb_coefficients_null.py --seed 0 --trials 200",
+    "comment": "TWO DISTINCT NULL STATISTICS, both reported here. (a) The cached p_all_3_targets_hit_under_random_coefficients = 0.885 is produced UPSTREAM by enumerating all 222954 algebraic compositions per random coefficient draw (full enumeration null); this is the look-elsewhere-relevant number quoted in the abstract. (b) The on-the-fly regenerator at src/perturb_coefficients_null.py evaluates ONLY the rigid baseline formulas of L6/L7/L8 (no enumeration); under --seed 0 --trials 200 it returns p_all_three approximately 0 (random rigid formulas almost never hit the EXACT cut). The on-the-fly script is the conservative-companion null. The local regression test tests/test_null_models.py::test_perturbation_null_runs_with_small_seed asserts the rigid-formula null hit-rate stays below 0.10. A separate test tests/test_null_models.py::test_null_does_not_reproduce_robust_core asserts the random-coefficient L1-L5 PRECISE_2.5 closure rate is below 0.10 (a different statistic). Reproduction of the cached 0.885 requires the full enumeration null pipeline upstream of this repo."
+  },
+  "baseline_residuals": {
+    "sin2_theta_W": 5.5994348200801105e-06,
+    "BH_entropy_quarter": 2.61724e-05,
+    "Einstein_gap_two_thirds": 2.512016508504633e-05
+  },
+  "null_statistics": {
+    "sin2_theta_W": {
+      "median_residual": 1.965e-05,
+      "p_at_least_one_hit_within_baseline_residual": 0.965,
+      "p_random_residual_le_baseline": 0.195
+    },
+    "BH_entropy_quarter": {
+      "median_residual": 2.785e-05,
+      "p_at_least_one_hit_within_baseline_residual": 0.925,
+      "p_random_residual_le_baseline": 0.49
+    },
+    "Einstein_gap_two_thirds": {
+      "median_residual": 1.099e-05,
+      "p_at_least_one_hit_within_baseline_residual": 0.985,
+      "p_random_residual_le_baseline": 0.765
+    }
+  },
+  "p_all_3_targets_hit_under_random_coefficients": 0.885,
+  "p_any_target_hit_under_random_coefficients": 1.0,
+  "interpretation": "Random coefficient sets reproduce all three EXACT hits 88.5% of the time and at least one 100% of the time; the EXACT classification of rows L6, L7, L8 is therefore look-elsewhere-caveated and is NOT a standalone structural proof of the underlying transport law. The robust claim is the PRECISE_2.5-or-better closure on rows L1-L5."
+}

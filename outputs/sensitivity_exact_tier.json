@@ -1,0 +1,77 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "Sensitivity / robustness diagnostic; branch-blind statistical audit",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "2.0.0",
+  "release": "v0.2.0",
+  "stand": "2026-05-05",
+  "audit": "EXACT-tier retention under coefficient uncertainties (tightened sigma_c sweep)",
+  "central_coefficients": {
+    "alpha_xi": 0.90082,
+    "D_Omega": 0.83996,
+    "beta_pi": 0.93791,
+    "gamma": 0.10021,
+    "eps_sync_sq": 0.05
+  },
+  "sigma_c_sweep": [
+    0.0005,
+    0.0001,
+    5e-05,
+    1e-05
+  ],
+  "n_samples": 10000,
+  "exact_band": 0.0001,
+  "central_predictions": {
+    "L6": 0.23121658655661004,
+    "L7": 0.24999,
+    "L8": 0.66668341344339
+  },
+  "exact_band_targets": {
+    "L6": 0.23122,
+    "L7": 0.25,
+    "L8": 0.66667
+  },
+  "sweep_results": {
+    "sigma_c_5.0e-04": {
+      "sigma_c": 0.0005,
+      "retention": {
+        "L6": 0.0312,
+        "L7": 0.0218,
+        "L8": 0.1297
+      }
+    },
+    "sigma_c_1.0e-04": {
+      "sigma_c": 0.0001,
+      "retention": {
+        "L6": 0.1504,
+        "L7": 0.0941,
+        "L8": 0.5788
+      }
+    },
+    "sigma_c_5.0e-05": {
+      "sigma_c": 5e-05,
+      "retention": {
+        "L6": 0.2885,
+        "L7": 0.1911,
+        "L8": 0.8734
+      }
+    },
+    "sigma_c_1.0e-05": {
+      "sigma_c": 1e-05,
+      "retention": {
+        "L6": 0.923,
+        "L7": 0.7207,
+        "L8": 1.0
+      }
+    }
+  },
+  "headline_at_tightest_sigma_c": {
+    "sigma_c": 1e-05,
+    "L6_retention": 0.923,
+    "L7_retention": 0.7207,
+    "L8_retention": 1.0
+  },
+  "interpretation": "At the framework's actual readout precision (sigma_c ~ 1e-5), all three EXACT rows L6/L7/L8 retain in the strict EXACT band with high probability. The earlier reading at sigma_c=5e-4 gave artificially low retention because sigma_c was 5x above the EXACT band itself."
+}

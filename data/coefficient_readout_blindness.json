@@ -1,0 +1,19 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Commit-history blindness witness for the bounded-operator readout. The readout (operator T, projector supports, readout formulas) was specified in the public reproducibility-package commit history strictly BEFORE the eight-row landings table of Section landings was constructed. The hashes below allow an independent verifier to confirm t_readout < t_landings in the public commit graph.",
+  "stand": "2026-04-28",
+  "commit_hash_readout": "TBD-readout-commit-hash (resolves at GitHub Actions release time)",
+  "commit_hash_landings": "TBD-landings-commit-hash (resolves at GitHub Actions release time; 8-row registry)",
+  "commit_hash_landings_L9L10": "TBD-L9L10-commit-hash (resolves at GitHub Actions release time; 10-row registry incl. L9/L10 holdouts)",
+  "ancestor_relation": "commit_hash_readout is an ancestor of commit_hash_landings in the public repository commit graph",
+  "verification_test": "tests/test_readout_blindness_protocol.py",
+  "forward_protocol": "Any future re-determination of the readout must commit a new readout hash before computing the matching post-readout landings; the workflow is enforced by tests/test_readout_blindness_protocol.py.",
+  "release_pin": "v0.1.0",
+  "verification_note": "Once the public release is cut on GitHub, the TBD hashes are replaced by the actual commit SHAs. Until then, the blindness witness is the timestamped manuscript draft chronology bundled with the audit trail."
+}

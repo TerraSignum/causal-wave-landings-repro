@@ -1,0 +1,59 @@
+{
+  "criterion": "IR-hyperbolicity of the retarded-shell Xi-d'Alembertian",
+  "theorem": "Theorem 7.9 of the program's proof collection",
+  "stencil": [
+    {
+      "weight": 0.5,
+      "Delta_tau": 1.0,
+      "Delta_x": 1.0
+    },
+    {
+      "weight": 0.5,
+      "Delta_tau": 1.0,
+      "Delta_x": -1.0
+    }
+  ],
+  "moments": {
+    "M1_linear_spatial": {
+      "value": 0.0,
+      "passes": true
+    },
+    "M2_mixed_time_space": {
+      "value": 0.0,
+      "passes": true
+    },
+    "M3_time_normalisation": {
+      "value": 0.5,
+      "passes": true
+    },
+    "M4_spatial_variance": {
+      "value": 0.5,
+      "passes": true
+    }
+  },
+  "effective_mass_squared": 0.0,
+  "emergent_signal_speed_squared": 1.0,
+  "hyperbolicity_passes": true,
+  "lorentz_deviation_sweep": [
+    {
+      "k": 0.01,
+      "delta_Lor_over_k2": 5.0000000000109636e-05
+    },
+    {
+      "k": 0.02,
+      "delta_Lor_over_k2": 0.00020000000000003197
+    },
+    {
+      "k": 0.05,
+      "delta_Lor_over_k2": 0.0012500000000000356
+    },
+    {
+      "k": 0.1,
+      "delta_Lor_over_k2": 0.004999999999999969
+    },
+    {
+      "k": 0.2,
+      "delta_Lor_over_k2": 0.02000000000000005
+    }
+  ]
+}

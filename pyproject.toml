@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causal-wave-landings-repro"
+version = "0.1.0"
+description = "Reproducibility package for the five-coefficient causal-wave transport law and its eight cross-sector benchmark landings."
+authors = [
+    { name = "Sandro Bucciarelli", email = "sandro.bucciarelli89@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["causal-wave transport", "cross-sector benchmarks", "look-elsewhere correction", "reproducibility"]
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+]
+
+[project.urls]
+Repository = "https://github.com/[anonymized]/causal-wave-landings-repro"
+Homepage = "https://github.com/[anonymized]/causal-wave-landings-repro"
+Issues = "https://github.com/[anonymized]/causal-wave-landings-repro/issues"
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra"

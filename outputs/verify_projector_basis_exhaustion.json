@@ -1,0 +1,75 @@
+{
+  "bundle": "verify_projector_basis_exhaustion",
+  "n_trials": 1000,
+  "rng_seed": 20260511,
+  "canonical_coefficients": {
+    "alpha_xi": 0.90082,
+    "D_Omega": 0.83996,
+    "beta_pi": 0.93791,
+    "gamma": 0.10021,
+    "eps_sync2": 0.05
+  },
+  "canonical_score": {
+    "n_precise": 10,
+    "n_factor2_or_better": 10,
+    "n_total": 10
+  },
+  "alternative_classes": {
+    "A_random_orthonormal": {
+      "class": "A_random_orthonormal",
+      "n_precise_mean": 3.232,
+      "n_precise_median": 3.0,
+      "n_precise_std": 1.5093627794536342,
+      "n_precise_max": 9,
+      "n_factor2_mean": 7.647,
+      "fraction_10_of_10_PRECISE": 0.0,
+      "verdict": "FAILS_PRECISE_CLOSURE"
+    },
+    "B_fiedler_laplacian": {
+      "class": "B_fiedler_laplacian",
+      "n_precise_mean": 0.049,
+      "n_precise_median": 0.0,
+      "n_precise_std": 0.21586801523152982,
+      "n_precise_max": 1,
+      "n_factor2_mean": 0.202,
+      "fraction_10_of_10_PRECISE": 0.0,
+      "verdict": "FAILS_PRECISE_CLOSURE"
+    },
+    "C_uniform_random_subset": {
+      "class": "C_uniform_random_subset",
+      "n_precise_mean": 5.148,
+      "n_precise_median": 5.0,
+      "n_precise_std": 1.7332328175983744,
+      "n_precise_max": 10,
+      "n_factor2_mean": 9.691,
+      "fraction_10_of_10_PRECISE": 0.008,
+      "verdict": "FAILS_PRECISE_CLOSURE"
+    },
+    "D_permuted_canonical": {
+      "class": "D_permuted_canonical",
+      "n_precise_mean": 10.0,
+      "n_precise_median": 10.0,
+      "n_precise_std": 0.0,
+      "n_precise_max": 10,
+      "n_factor2_mean": 10.0,
+      "fraction_10_of_10_PRECISE": 1.0,
+      "verdict": "REPRODUCES_CANONICAL"
+    },
+    "E_corrupted_channel": {
+      "class": "E_corrupted_channel",
+      "n_precise_mean": 5.571,
+      "n_precise_median": 6.0,
+      "n_precise_std": 1.923267792066409,
+      "n_precise_max": 10,
+      "n_factor2_mean": 6.029,
+      "fraction_10_of_10_PRECISE": 0.012,
+      "verdict": "FAILS_PRECISE_CLOSURE"
+    }
+  },
+  "headline": {
+    "canonical_passes_10_of_10": true,
+    "translation_invariant_check": true,
+    "alternative_classes_fail": true,
+    "exhaustion_verdict": "AVENUE_C_CLOSED"
+  }
+}

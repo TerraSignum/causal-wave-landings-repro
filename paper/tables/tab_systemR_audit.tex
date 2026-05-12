@@ -1,0 +1,12 @@
+\begin{tabular}{@{}p{0.18\textwidth} l p{0.28\textwidth} p{0.36\textwidth}@{}}
+\toprule
+Audit item & Status & Artefact & Finding \\
+\midrule
+(1) Timestamped extraction & \textsc{closed} & \texttt{data/\allowbreak{}coefficient\_\allowbreak{}readout\_\allowbreak{}blindness.json} & readout-commit hash precedes landings-commit hash in the release pin v0.1.0; verification test tests/test\_readout\_blindness\_protocol.py \\
+(2) Target-blind readout & \textsc{closed} & \texttt{src/\allowbreak{}verify\_\allowbreak{}coefficient\_\allowbreak{}readout.py} & operator T, projector supports, readout formulas defined without reference to $\sin^2\theta\_W$, $1/4$, $2/3$, $\Lambda\_t$, $\Lambda\_s$ targets \\
+(3) Random-alphabet null & \textsc{closed} & \texttt{src/\allowbreak{}reduction\_\allowbreak{}null\_\allowbreak{}v2.py  +  src/\allowbreak{}run\_\allowbreak{}look\_\allowbreak{}elsewhere.py  +  src/\allowbreak{}alphabet\_\allowbreak{}shuffled\_\allowbreak{}null.py} & uniform-5-tuple null on $n=10^{5}$ trials: zero joint-pass hits ($p<3\!\times\!10^{-5}$); 3000 small-rational 5-tuple null gives joint chance probability $<\!1\%$; alphabet-shuffled label-permutation null on the $5!{=}120$ permutations of the canonical measured values isolates the canonical assignment uniquely ($p\_{\rm shuffle}=1/120\!\approx\!8.3\!\times\!10^{-3}$) \\
+(4) Coefficient-perturbation null & \textsc{closed} & \texttt{src/\allowbreak{}perturb\_\allowbreak{}coefficients\_\allowbreak{}null.py  +  data/\allowbreak{}coefficient\_\allowbreak{}perturbation\_\allowbreak{}null.json} & $\pm\!1\%$ perturbation of each readout coefficient breaks $\ge\!7$/$10$ landing rows out of the PRECISE band; the fine-tuning of the measured tuple is not an arbitrary choice \\
+(5) Holdout observables (L9/L10) & \textsc{closed} & \texttt{data/\allowbreak{}landings\_\allowbreak{}expected.json (L9, L10 added after the original eight-row table)} & $\Lambda\_t\!=\!\alpha\_\xi^2\!=\!81/100$ and $\Lambda\_s\!=\!-\gamma^2/2\!=\!-1/200$ predicted in $\mathcal R$ before lattice verification in companion P4; both close PRECISE/EXACT post-readout \\
+(6) Per-landing dependency graph & \textsc{closed} & \texttt{outputs/\allowbreak{}system\_\allowbreak{}R\_\allowbreak{}audit\_\allowbreak{}summary.json (dependency\_\allowbreak{}graph field)} & L7 uses only $\{\alpha\_\xi,\gamma\}$ (no alphabet letters), L9/L10 each use a single coefficient; no landing depends on the full 5-tuple via pure-letter overlap \\
+\bottomrule
+\end{tabular}

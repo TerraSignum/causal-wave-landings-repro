@@ -1,0 +1,21 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "Lattice-seed-level diagnostic; branch-blind lattice analysis",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Canonical lattice seed used for the bounded-operator readout of the five causal-wave coefficients. The lattice is the discrete causal-set of the Xi-graph at the canonical regime: a finite set of N events with a partial order defining causal predecessors, plus retarded-shell edge weights bounded by sup |W_ij^(n)| <= 1. The bundled value here is the canonical-regime size N=1539 used in all downstream constructions.",
+  "stand": "2026-04-28",
+  "lattice": {
+    "regime": "canonical",
+    "N_events": 1539,
+    "edge_weight_bound": 1.0,
+    "shell_count": 8,
+    "causal_partial_order": "documented in shell_coefficients.json",
+    "graph_type": "Xi-graph (relational similarity matrix Xi_ij with M1-M3 axioms)",
+    "construction_certificate": "src/verify_coefficient_readout.py"
+  },
+  "provenance": "Documented in companion paper Paper 4 (emergent-gr-closure-repro); the same lattice is consumed by all four companion repositories with consistent N=1539 at the canonical regime."
+}

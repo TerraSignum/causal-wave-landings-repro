@@ -1,0 +1,46 @@
+{
+  "method": "verify_chirality_matter_boundary_real_lattice",
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave landings repository default fallback",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "2.0.0",
+  "definitions": {
+    "theta_chir_per_node": "arctan(sqrt(f_back/(1-f_back))) with f_back=max(T_00-G_00,0)/max(T_00,eps)",
+    "C_N_tau": "top-5% of |T_00 - G_00 - Lambda_t_struct|",
+    "Lambda_t_struct": 0.81,
+    "tau_percentile": 95.0
+  },
+  "per_regime": [
+    {
+      "regime": "P5N100",
+      "N": 100,
+      "n_nodes": 100,
+      "n_matter_side": 100,
+      "n_in_C_N": 5,
+      "T1_AUC_theta_predicts_C_N": 0.5,
+      "T2_rho_theta_T00": 0.12055205520552055,
+      "T3_rho_theta_absR_bar_over_2": 0.0445004500450045,
+      "T4_P_CN_given_matter": 0.05,
+      "T4_P_CN_given_vacuum": 0.0,
+      "T4_ratio_matter_vacuum": 500000000.0,
+      "T5_rho_theta_distance": 0.2
+    },
+    {
+      "regime": "P5N128",
+      "N": 128,
+      "n_nodes": 128,
+      "n_matter_side": 128,
+      "n_in_C_N": 7,
+      "T1_AUC_theta_predicts_C_N": 0.5,
+      "T2_rho_theta_T00": -0.03215986083134957,
+      "T3_rho_theta_absR_bar_over_2": 0.03212552646035525,
+      "T4_P_CN_given_matter": 0.0546875,
+      "T4_P_CN_given_vacuum": 0.0,
+      "T4_ratio_matter_vacuum": 546875000.0,
+      "T5_rho_theta_distance": 1.0
+    }
+  ],
+  "verdict": "REFUTED_LOCAL_MATTER_BOUNDARY: per-node Wilson-loop holonomy theta_chir is statistically uncorrelated with |T-G|-residual matter-core (AUC near 0.5, rho near 0). Chirality-flip remains a GLOBAL coefficient regime change; the speculative LOCAL per-node matter-core boundary criterion is not supported by real lattice data"
+}

@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: "Five-coefficient causal-wave transport law and eight benchmark landings"
+message: "If you use this software or data, please cite it using the metadata below."
+authors:
+  - family-names: Bucciarelli
+    given-names: Sandro
+version: 0.1.0
+date-released: 2026-04-26
+license: MIT
+repository-code: "https://github.com/[anonymized]/causal-wave-landings-repro"
+abstract: >-
+  A reproducible Python package implementing the five-coefficient causal-wave
+  transport equation and its eight cross-sector benchmark landings. The
+  five coefficients (alpha_xi, D_Omega, beta_pi, gamma, eps_sync^2) are
+  measured from bounded-operator readout on the underlying Xi lattice and
+  are not fitted to any of the eight downstream observables. Eight landings
+  reproduce within PRECISE-or-better (max residual 2.5%); three EXACT-tier
+  hits (sin^2 theta_W, BH 1/4, Einstein gap 2/3) are reported as
+  look-elsewhere caveated.
+keywords:
+  - causal-wave transport
+  - cross-sector benchmarks
+  - look-elsewhere correction
+  - reproducibility
+  - particle-physics
+  - cosmology
+references:
+  - type: article
+    title: "Five-coefficient causal-wave transport law and eight cross-sector benchmark relations"
+    authors:
+      - family-names: Bucciarelli
+        given-names: Sandro
+    year: 2026
+    notes: "Accompanying preprint; see paper/manuscript.pdf in this repository."

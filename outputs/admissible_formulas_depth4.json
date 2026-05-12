@@ -1,0 +1,57 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "stand": "2026-04-28",
+  "audit": "Admissible formula candidate-space enumeration at depth <= 4",
+  "alphabet": {
+    "rational": [
+      "1/2",
+      "1/3",
+      "1/4",
+      "1/5"
+    ],
+    "pi_topological": [
+      "pi/4",
+      "4/pi"
+    ],
+    "integer": [
+      "N_gen"
+    ],
+    "carriers": [
+      "alpha_xi",
+      "D_Omega",
+      "beta_pi",
+      "gamma",
+      "eps_sync_sq"
+    ],
+    "integer_powers_allowed": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "division_denominators_allowed": [
+      "1+gamma",
+      "1-gamma",
+      "1+gamma^2/4"
+    ]
+  },
+  "candidate_space_count": {
+    "depth_limit": 4,
+    "n_atoms": 12,
+    "n_carriers": 5,
+    "n_alphabet_elements": 7,
+    "n_linear_layer": 1267273,
+    "n_product_layer": 15184,
+    "n_division_layer": 3801819,
+    "N_cand": 5084276
+  },
+  "bundled_N_cand": 174000,
+  "selection_rate_to_eight_targets": 0.0002701149425287356,
+  "verdict": "Admissible candidate-space size at depth <= 4: 5,084,276 formulas. The selection rate 47/174000 ~ 2.7e-4 for one or more of the eight targets is the load-bearing look-elsewhere statistic of Paper 2."
+}

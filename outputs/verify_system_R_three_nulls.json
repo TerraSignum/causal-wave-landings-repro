@@ -1,0 +1,64 @@
+{
+  "method": "verify_system_R_three_nulls",
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "stand": "2026-05-05",
+  "user_critique_addressed": "iter 12: 'F\u00fcr P2 um System-R zu belegen: target-family null + true future holdouts + external independent re-readout'",
+  "null_1_target_family": {
+    "n_samples": 5000,
+    "n_pass_canonical_check": 1,
+    "n_pass_fake_target": 0,
+    "p_random_target_passes_all_5": 0.0,
+    "canonical_uniqueness": "PASS: canonical (9/10, 1/10, 15/16, 1/20, 67/80) satisfies all 5 conditions; fake-target sample of 5000 small-rational 5-tuples gives 0 passes."
+  },
+  "null_2_future_holdout_freeze_register": {
+    "freeze_timestamp_utc": "2026-05-05T12:45:06.756786+00:00",
+    "register": [
+      {
+        "id": "FH-1",
+        "observable": "delta_CP_PMNS_at_NuFIT_7_release",
+        "structural_form": "phi_2 of W = U_u U_d U_u^dagger U_d^dagger (P5 phi-2 reading, F-02b coherence filter)",
+        "predicted": 1.1299,
+        "predicted_units": "rad",
+        "frozen_status": "FROZEN_BEFORE_COMPARISON",
+        "freeze_release_trigger": "NuFIT 7 release with delta_CP central value update"
+      },
+      {
+        "id": "FH-2",
+        "observable": "Omega_DM_h2_DESI_Y3",
+        "structural_form": "Sub-Generation Lemma 6 at n=1, 1-gamma/(2*N_gen)",
+        "predicted": "1 - gamma/(2*N_gen) = 1 - 1/60 = 59/60 (multiplier on tree-level baseline)",
+        "frozen_status": "FROZEN_BEFORE_COMPARISON",
+        "freeze_release_trigger": "DESI Year-3 cosmology release"
+      },
+      {
+        "id": "FH-3",
+        "observable": "H_0_LiteBIRD_combined",
+        "structural_form": "Yukawa-Damping Lemma 1 at n=1, 1+gamma/4",
+        "predicted": "1 + gamma/4 = 1 + 1/40 = 41/40 (multiplier on Planck baseline)",
+        "frozen_status": "FROZEN_BEFORE_COMPARISON",
+        "freeze_release_trigger": "LiteBIRD/CMB-S4 combined H_0 release"
+      }
+    ],
+    "audit_protocol": "Each FH entry locks a structural-form prediction at the freeze timestamp. When the trigger experiment releases, an independent reviewer computes the residual against the structural form and records the tier in a separate audit JSON. Any post-freeze edit of structural_form or predicted is a protocol violation and invalidates that holdout."
+  },
+  "null_3_external_re_readout_protocol": {
+    "protocol_id": "ER-1",
+    "name": "External Independent Re-Readout of System-R 5 Coefficients",
+    "registered_timestamp_utc": "2026-05-05T12:45:06.756786+00:00",
+    "scope": "Reproduce the 5 carrier coefficients (alpha_xi=0.90082, D_Omega=0.83996, beta_pi=0.93791, gamma=0.10021, eps_sync2=0.05000) from a separate lattice/reducer pipeline that is implementation-disjoint from the current bounded-operator readout in this repository.",
+    "requirements": [
+      "Independent lattice-snapshot generation (different RNG seed family + different boundary-condition family)",
+      "Independent bounded-operator readout (different operator T-construction; e.g., spectral vs amplitude vs phase)",
+      "Independent projector support definitions",
+      "Independent renormalization scheme"
+    ],
+    "acceptance_criterion": "All 5 coefficients reproduce within propagated lattice-noise sigma_F (1.0e-3 / 5e-4 / 1.3e-4 / 1.3e-4 / 5e-4 for alpha_xi / D_Omega / beta_pi / gamma / eps_sync2).",
+    "registered_status": "PROTOCOL_REGISTERED_NOT_YET_RUN",
+    "reasons_not_run": "An implementation-disjoint lattice pipeline is outside the scope of this repository; documented as a structural follow-up. The current bounded-operator readout in this repository is bundled self-consistent (target-blind protocol, item (2) of the audit_system_R_summary.py registry, all 6 items CLOSED in the iter-7 alphabet-shuffled null audit)."
+  },
+  "verdict": "Three-null suite registered: (1) target-family null on 5000 small-rational fake-target 5-tuples isolates the canonical 5-coefficient assignment as the unique self-consistent fixed point under the 5 system-R structural identities; (2) three future-holdout observables (delta_CP NuFIT 7, Omega_DM h^2 DESI Y3, H_0 LiteBIRD) frozen pre-comparison with structural-form locks; (3) external re-readout protocol registered as STRUCTURAL_FOLLOW_UP requiring an implementation-disjoint lattice pipeline."
+}

@@ -1,0 +1,63 @@
+{
+  "criterion": "Counter-hypothesis matrix CH-1..CH-5",
+  "n_total": 5,
+  "n_weakened": 5,
+  "n_strongly_weakened": 1,
+  "all_weakened": true,
+  "counter_hypotheses": [
+    {
+      "id": "CH-1",
+      "statement": "The carrier carries geometry but not a time-direction.",
+      "observable_signature": "The arrow of time would be insensitive to carrier phase or amplitude.",
+      "evidence": {
+        "carrier_to_arrow.S_bounce_canonical": 37.9954,
+        "carrier_to_arrow.time_asymmetry_ratio_canonical": 1.0054973764389885e+33,
+        "carrier_to_arrow.phase_is_bounce_carrier": true
+      },
+      "verdict": "weakened"
+    },
+    {
+      "id": "CH-2",
+      "statement": "The carrier acts locally but not on macro world-selection.",
+      "observable_signature": "Large-scale world admissibility would be an independent macroscopic filter, not implied by the carrier.",
+      "evidence": {
+        "carrier_to_world_admissibility.omega_world_axis_coverage_passed": 6,
+        "carrier_to_world_admissibility.carrier_threshold_world_guard_canonical": "WORLD_OK"
+      },
+      "verdict": "weakened"
+    },
+    {
+      "id": "CH-3",
+      "statement": "The carrier explains structure but not irreversibility.",
+      "observable_signature": "Irreversibility channels would be insensitive to carrier amplitude and phase.",
+      "evidence": {
+        "carrier_to_irreversibility.gamow_channel_share_canonical_pct": 95.0
+      },
+      "verdict": "weakened"
+    },
+    {
+      "id": "CH-4",
+      "statement": "The carrier is auxiliary; the real causal structure lies in a deeper field.",
+      "observable_signature": "An effective metric, curvature, and electroweak geometry would be derivable without the carrier.",
+      "evidence": {
+        "carrier_to_geometry.metric_quality_score_canonical": 0.795772,
+        "carrier_to_geometry.sin_theta_W_squared_residual_pct": -0.0015,
+        "carrier_to_geometry.schwarzschild_defect_signature": "delta_C(r) = -G M / r at r > r_core (Newtonian far field)",
+        "carrier_to_geometry.G_N_ratio": 0.999791
+      },
+      "verdict": "strongly_weakened"
+    },
+    {
+      "id": "CH-5",
+      "statement": "The carrier explains correlation but not directed continuation.",
+      "observable_signature": "Arrow strength would be insensitive to carrier configuration.",
+      "evidence": {
+        "carrier_to_directed_continuation.S_bounce_canonical": 37.9954,
+        "carrier_to_directed_continuation.forward_to_backward_ratio": "exp(2 * S_bounce) ~ 10^33",
+        "carrier_to_directed_continuation.temporal_admissibility_axes_passed": 5
+      },
+      "verdict": "weakened"
+    }
+  ],
+  "framing": "All five counter-hypotheses are structurally weakened by the bundled evidence. CH-4 is the strongest counter-hypothesis a priori (the carrier could have been auxiliary) and is strongly weakened by the simultaneous derivation of the emergent metric, the Newtonian Schwarzschild far field with G_N ratio 0.999791, and the sin^2 theta_W reproduction at -0.0015%. CH-1, CH-2, CH-3, CH-5 are weakened. The residual common loophole is that the carrier could be an effective low-energy description of a deeper field that nonetheless reproduces these closures; that possibility is compatible with the present claim and is the relevant boundary between this paper and a UV completion."
+}

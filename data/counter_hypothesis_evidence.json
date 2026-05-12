@@ -1,0 +1,121 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave landing / projector / carrier diagnostic; running-envelope context",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Falsification scaffolding for the central claim that the carrier C(tau) of the transport equation underpins the cross-sector closure. Five counter-hypotheses CH-1..CH-5 are each paired with (i) an operationally observable distinguishing prediction, and (ii) the bundled numerical evidence that bears on it. All quantities here are drawn from the upstream pipeline that produced the five carrier coefficients of Table 1 (the bounded-operator readout on the Xi-lattice plus the emergent-time and Schwarzschild-defect derivations); they are bundled here as a self-contained falsification readout for the present paper.",
+  "stand": "2026-04-26",
+  "source_pipelines": {
+    "carrier_coefficients": "outputs_causal_wave_universality/universal_derivation.json",
+    "arrow_of_time": "outputs_emergent_time/emergent_time_bundle.json (EMT-02 arrow_of_time)",
+    "schwarzschild_defect": "outputs_theory_closure/c1_schwarzschild_defect.json (SCD-01 xi_perturbation, SCD-02 schwarzschild_metric, SCD-04 newtonian_limit)",
+    "world_admissibility": "outputs_owc_*/ (Omega-World-Closure axis coverage)",
+    "irreversibility_decomposition": "outputs_emergent_time/EMT-02 + Gamow-channel share",
+    "carrier_assessment": "outputs_causal_wave_assessment/causal_wave_assessment_bundle.json (PG-CW3 counter_hypotheses, PG-CW4 bridges)"
+  },
+  "carrier_to_arrow": {
+    "S_bounce_canonical": 37.9954,
+    "S_bounce_extended": 36.2903,
+    "time_asymmetry_ratio_canonical": 1.0054973764389885e+33,
+    "time_asymmetry_ratio_extended": 3.321627714286679e+31,
+    "carrier_phase_identified_with_S_bounce": true,
+    "phase_is_bounce_carrier": true,
+    "test": "Xi-phase <-> S_bounce identity",
+    "strength": "STRONG",
+    "interpretation": "The carrier phase is identified with the bounce action under the program's tunneling identification; not merely correlated but carried by the same scalar. Identity verified at the canonical regime to within numerical precision."
+  },
+  "carrier_to_world_admissibility": {
+    "omega_world_axis_coverage_total": 7,
+    "omega_world_axis_coverage_passed": 6,
+    "carrier_threshold_world_guard_canonical": "WORLD_OK",
+    "carrier_threshold_world_guard_extended": "WORLD_OK",
+    "test": "Carrier-driven dynamics derive 6/7 admissibility axes; carrier-threshold guard filters admissible worlds",
+    "strength": "STRONG"
+  },
+  "carrier_to_irreversibility": {
+    "gamow_channel_share_canonical_pct": 95.0,
+    "irreversibility_dominant_channel": "Gamow-tunneling parameterised by the carrier amplitude",
+    "test": "Removing carrier amplitude eliminates the dominant irreversibility channel",
+    "strength": "STRONG"
+  },
+  "carrier_to_geometry": {
+    "metric_quality_score_canonical": 0.795772,
+    "metric_quality_score_extended": 0.754266,
+    "fisher_metric_realisation": "the emergent metric is the Fisher metric on the carrier",
+    "sin_theta_W_squared_residual_pct": -0.0015,
+    "schwarzschild_defect_signature": "delta_C(r) = -G M / r at r > r_core (Newtonian far field)",
+    "schwarzschild_g_00_residual_canonical_pct": 0.0283,
+    "schwarzschild_g_00_residual_extended_pct": 0.0274,
+    "G_N_ratio": 0.999791,
+    "newtonian_limit_residual_pct": 0.021,
+    "test": "The emergent metric, electroweak geometry, and Schwarzschild far field are all derivable from the carrier perturbation and not from a deeper field that bypasses the carrier",
+    "strength": "STRONG (Schwarzschild far-field) + STRONG (sin^2 theta_W) + MODERATE (Fisher-metric realisation)"
+  },
+  "carrier_to_directed_continuation": {
+    "S_bounce_canonical": 37.9954,
+    "forward_to_backward_ratio": "exp(2 * S_bounce) ~ 10^33",
+    "temporal_admissibility_axes_passed": 5,
+    "temporal_admissibility_axes_total": 5,
+    "test": "S_bounce explicitly measures asymmetric tunneling; the temporal-admissibility filter passes only carrier configurations preserving arrow coherence.",
+    "strength": "STRONG"
+  },
+  "counter_hypotheses": [
+    {
+      "id": "CH-1",
+      "statement": "The carrier carries geometry but not a time-direction.",
+      "observable_signature": "The arrow of time would be insensitive to carrier phase or amplitude.",
+      "evidence_against_keys": [
+        "carrier_to_arrow.S_bounce_canonical",
+        "carrier_to_arrow.time_asymmetry_ratio_canonical",
+        "carrier_to_arrow.phase_is_bounce_carrier"
+      ],
+      "verdict": "weakened"
+    },
+    {
+      "id": "CH-2",
+      "statement": "The carrier acts locally but not on macro world-selection.",
+      "observable_signature": "Large-scale world admissibility would be an independent macroscopic filter, not implied by the carrier.",
+      "evidence_against_keys": [
+        "carrier_to_world_admissibility.omega_world_axis_coverage_passed",
+        "carrier_to_world_admissibility.carrier_threshold_world_guard_canonical"
+      ],
+      "verdict": "weakened"
+    },
+    {
+      "id": "CH-3",
+      "statement": "The carrier explains structure but not irreversibility.",
+      "observable_signature": "Irreversibility channels would be insensitive to carrier amplitude and phase.",
+      "evidence_against_keys": [
+        "carrier_to_irreversibility.gamow_channel_share_canonical_pct"
+      ],
+      "verdict": "weakened"
+    },
+    {
+      "id": "CH-4",
+      "statement": "The carrier is auxiliary; the real causal structure lies in a deeper field.",
+      "observable_signature": "An effective metric, curvature, and electroweak geometry would be derivable without the carrier.",
+      "evidence_against_keys": [
+        "carrier_to_geometry.metric_quality_score_canonical",
+        "carrier_to_geometry.sin_theta_W_squared_residual_pct",
+        "carrier_to_geometry.schwarzschild_defect_signature",
+        "carrier_to_geometry.G_N_ratio"
+      ],
+      "verdict": "strongly_weakened"
+    },
+    {
+      "id": "CH-5",
+      "statement": "The carrier explains correlation but not directed continuation.",
+      "observable_signature": "Arrow strength would be insensitive to carrier configuration.",
+      "evidence_against_keys": [
+        "carrier_to_directed_continuation.S_bounce_canonical",
+        "carrier_to_directed_continuation.forward_to_backward_ratio",
+        "carrier_to_directed_continuation.temporal_admissibility_axes_passed"
+      ],
+      "verdict": "weakened"
+    }
+  ],
+  "framing": "All five counter-hypotheses are structurally weakened by the bundled evidence. CH-4 is the strongest counter-hypothesis a priori (the carrier could have been auxiliary) and is strongly weakened by the simultaneous derivation of the emergent metric, the Newtonian Schwarzschild far field with G_N ratio 0.999791, and the sin^2 theta_W reproduction at -0.0015%. CH-1, CH-2, CH-3, CH-5 are weakened. The residual common loophole is that the carrier could be an effective low-energy description of a deeper field that nonetheless reproduces these closures; that possibility is compatible with the present claim and is the relevant boundary between this paper and a UV completion."
+}

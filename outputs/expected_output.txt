@@ -1,0 +1,35 @@
+==============================================================================
+Causal-wave benchmark landings -- strict recompute
+Source: emergence-core-data v0.1.0 (frozen)
+==============================================================================
+
+--- Five measured causal-wave coefficients ---
+  alpha_xi   = 0.90082
+  D(Omega)   = 0.83996
+  beta_pi    = 0.93791
+  gamma      = 0.10021
+  eps_sync^2 = 0.05000
+  G_NET      = 1.78852  (alpha_xi + beta_pi + eps_sync^2 - gamma)
+  N_gen      = 3
+
+--- Eight benchmark landings ---
+  id  observable                            pred        target   resid % tier         LE 
+  ------------------------------------------------------------------------------
+  L1  alpha_dn_yukawa_exponent          1.788520      1.833333  -2.4444% PRECISE_2.5  no 
+  L2  Omega_DM_h2                       0.121722      0.120000  +1.4346% PRECISE_2.5  no 
+  L3  w_DE                             -0.975052     -1.000000  -2.4948% PRECISE_2.5  no 
+  L4  alpha_s_M_Z                       0.119669      0.117900  +1.5006% PRECISE_2.5  no 
+  L5  alpha_cl_lepton_yukawa            1.311456      1.333333  -1.6408% PRECISE_2.5  no 
+  L6  sin2_theta_W                      0.231217      0.231220  -0.0015% EXACT        yes
+  L7  BH_entropy_quarter                0.249990      0.250000  -0.0040% EXACT        yes
+  L8  Einstein_gap_two_thirds           0.666683      0.666667  +0.0025% EXACT        yes
+
+--- Aggregate result ---
+  PRECISE-or-better landings:        8/8
+  Robust core (L1-L5) within 2.5%:   5/5
+  Look-elsewhere caveated rows:      L6, L7, L8
+
+--- Acceptance ---
+  PASS: 8/8 PRECISE-or-better; robust 5/5 core within 2.5%.
+
+Saved machine-readable result: C:\Users\user\Desktop\Emergence\causal-wave-landings-repro\outputs\recompute_landings.json

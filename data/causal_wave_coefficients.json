@@ -1,0 +1,59 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave / chirality-running carrier; spans the chirality flip",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Five measured causal-wave transport coefficients of the carrier C(tau). Determined by bounded-operator readout on the underlying lattice; not fitted to downstream observables.",
+  "source_pipeline": "outputs_causal_wave_universality/universal_derivation.json",
+  "stand": "2026-04-26",
+  "transport_equation": "dC/dtau = D(Omega) * Laplacian(C) - gamma * C + alpha_xi * C + beta_pi * Pi_common * C + eps_sync2 * C",
+  "coefficients": {
+    "alpha_xi": {
+      "value": 0.90082,
+      "role": "Xi reaction rate (correlation buildup through Xi)",
+      "uncertainty": null
+    },
+    "D_Omega": {
+      "value": 0.83996,
+      "role": "Effective diffusion on the Omega shell",
+      "uncertainty": null
+    },
+    "beta_pi": {
+      "value": 0.93791,
+      "role": "Phase / holonomy mode (common-mode projector)",
+      "uncertainty": null
+    },
+    "gamma": {
+      "value": 0.10021,
+      "role": "Damping / dissipation rate (source of the time arrow)",
+      "uncertainty": null
+    },
+    "eps_sync2": {
+      "value": 0.05,
+      "role": "Sync^2 self-amplification (persistence layer)",
+      "uncertainty": null
+    }
+  },
+  "derived_quantities": {
+    "G_NET": {
+      "value": 1.78852,
+      "formula": "alpha_xi + beta_pi + eps_sync2 - gamma",
+      "role": "Net transport gain per unit tau (central kinematic quantity)"
+    },
+    "N_gen": {
+      "value": 3,
+      "role": "Number of fermion generations (used in dimensional landings)"
+    }
+  },
+  "provenance": {
+    "method": "bounded-operator readout on Xi lattice",
+    "criterion": "bounded-operator readout convergence criterion",
+    "fits_to_targets": false,
+    "free_parameters": 0,
+    "regime_scope": "canonical regime",
+    "regime_internal_label": "P1"
+  }
+}

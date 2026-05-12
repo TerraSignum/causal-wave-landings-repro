@@ -1,0 +1,144 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave landing / projector / carrier diagnostic; running-envelope context",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Eight benchmark landings re-evaluated under the rational reduction R = (9/10, 67/80, 15/16, 1/10, 1/20). Residuals are computed in exact Q-arithmetic (no floating-point); two rows (alpha_dn and w_DE) sit on the boundary at exactly 1/40 = 2.5%. Under the manuscript's <= 2.5% PRECISE-tier rule both are PRECISE; under a strict < 2.5% reading both fail. The boundary is structural (the closure of the rational ascent of L1 and L3 is exactly 1/40 in Q), not a numerical artifact.",
+  "stand": "2026-04-27",
+  "source_pipeline": "outputs_causal_wave_universality/coefficient_reduction.json",
+  "reduction_values": {
+    "alpha_xi": 0.9,
+    "D_Omega": 0.8375,
+    "beta_pi": 0.9375,
+    "gamma": 0.1,
+    "eps_sync2": 0.05,
+    "G_NET": 1.7875,
+    "rational_form": {
+      "alpha_xi": "9/10",
+      "D_Omega": "67/80",
+      "beta_pi": "15/16",
+      "gamma": "1/10",
+      "eps_sync2": "1/20",
+      "G_NET": "143/80"
+    }
+  },
+  "boundary_rule": "<= 2.5% (manuscript convention: PRECISE_2.5 tier is closed at 2.5% exactly).",
+  "landings": {
+    "alpha_dn": {
+      "formula": "G_NET",
+      "prediction": "143/80",
+      "prediction_float": 1.7875,
+      "target": "11/6",
+      "target_float": 1.8333333333333333,
+      "residual_exact": "1/40",
+      "residual_pct": 2.5,
+      "boundary_case": true,
+      "algebraically_exact_under_R": false,
+      "passes_2.5pct": true
+    },
+    "Omega_DM_h2": {
+      "formula": "alpha^2 * eps^2 * N_gen",
+      "prediction": "243/2000",
+      "prediction_float": 0.1215,
+      "target": "0.120",
+      "target_float": 0.12,
+      "residual_exact": "1/80",
+      "residual_pct": 1.25,
+      "boundary_case": false,
+      "algebraically_exact_under_R": false,
+      "passes_2.5pct": true
+    },
+    "w_DE": {
+      "formula": "-1 + (eps^2)^2 / gamma",
+      "prediction": "-39/40",
+      "prediction_float": -0.975,
+      "target": "-1",
+      "target_float": -1.0,
+      "residual_exact": "1/40",
+      "residual_pct": 2.5,
+      "boundary_case": true,
+      "algebraically_exact_under_R": false,
+      "passes_2.5pct": true
+    },
+    "alpha_s": {
+      "formula": "gamma * beta * 4/pi",
+      "prediction": "(15/40)/pi",
+      "prediction_float": 0.1193662073189215,
+      "target": "0.1179",
+      "target_float": 0.1179,
+      "residual_exact": null,
+      "residual_pct": 1.2436024757603878,
+      "boundary_case": false,
+      "algebraically_exact_under_R": false,
+      "passes_2.5pct": true
+    },
+    "alpha_cl": {
+      "formula": "(alpha/beta) * (D/(1+gamma)) * G_NET",
+      "prediction": "2613/2000",
+      "prediction_float": 1.3065,
+      "target": "4/3",
+      "target_float": 1.3333333333333333,
+      "residual_exact": "161/8000",
+      "residual_pct": 2.0125,
+      "boundary_case": false,
+      "algebraically_exact_under_R": false,
+      "passes_2.5pct": true
+    },
+    "sin2_theta_W": {
+      "formula": "beta - (1-gamma)*pi/4",
+      "prediction": "15/16 - 9*pi/40",
+      "prediction_float": 0.23064165294229655,
+      "target": "0.23122",
+      "target_float": 0.23122,
+      "residual_exact": null,
+      "residual_pct": 0.250128474052184,
+      "boundary_case": false,
+      "algebraically_exact_under_R": false,
+      "passes_2.5pct": true
+    },
+    "BH_1_4": {
+      "formula": "alpha/2 - 2*gamma",
+      "prediction": "1/4",
+      "prediction_float": 0.25,
+      "target": "1/4",
+      "target_float": 0.25,
+      "residual_exact": "0",
+      "residual_pct": 0.0,
+      "boundary_case": false,
+      "algebraically_exact_under_R": true,
+      "passes_2.5pct": true
+    },
+    "Einstein_2_3": {
+      "formula": "(1-gamma)*pi/4 - (1-D)/4",
+      "prediction": "9*pi/40 - 13/320",
+      "prediction_float": 0.6662333470577034,
+      "target": "2/3",
+      "target_float": 0.6666666666666666,
+      "residual_exact": null,
+      "residual_pct": 0.06499794134448011,
+      "boundary_case": false,
+      "algebraically_exact_under_R": false,
+      "passes_2.5pct": true
+    }
+  },
+  "counts": {
+    "algebraically_exact_under_R": 1,
+    "precise_2.5pct_under_R": 8,
+    "boundary_at_2.5pct_exact": 2
+  },
+  "BH_uniqueness": {
+    "formula": "BH(N) = (N^2 - 4)/(2(N^2+1))",
+    "values_by_N": {
+      "1": -0.75,
+      "2": 0.0,
+      "3": 0.25,
+      "4": 0.35294117647058826,
+      "5": 0.40384615384615385,
+      "6": 0.43243243243243246
+    },
+    "unique_integer_giving_one_quarter": 3
+  }
+}

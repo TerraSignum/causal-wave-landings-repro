@@ -1,0 +1,47 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Look-elsewhere control. Full enumeration of algebraic compositions of {alpha_xi, D_Omega, beta_pi, gamma, eps_sync2} times allowed topological multipliers, against three EXACT-tier targets (sin2_theta_W, BH_entropy_quarter, Einstein_gap_two_thirds). Reports observed-over-uniform-null hit rates and Bonferroni-corrected joint p-values.",
+  "stand": "2026-04-26",
+  "source_pipeline": "outputs_causal_wave_universality/selection_correction.json",
+  "search_space_size": 222954,
+  "in_domain_coefficients_range": [
+    0.1,
+    1.0
+  ],
+  "in_domain_size": 114189,
+  "n_blocks": 23,
+  "n_topological_multipliers": 18,
+  "n_targets": 3,
+  "targets": {
+    "sin2_theta_W": {
+      "best_residual": 5.5994348200801105e-06,
+      "p_per_target": 0.3285347753924154,
+      "p_bonferroni_3_targets": 0.9856043261772461,
+      "exact_hits_at_1e-4_cut": 7,
+      "expected_uniform_null": 5.867284573333333,
+      "observed_over_expected": 1.193
+    },
+    "BH_entropy_quarter": {
+      "best_residual": 2.61724e-05,
+      "exact_hits_at_1e-4_cut": 11,
+      "expected_uniform_null": 6.343833333333333,
+      "observed_over_expected": 1.734
+    },
+    "Einstein_gap_two_thirds": {
+      "best_residual": 8.57e-06,
+      "exact_hits_at_1e-4_cut": 12,
+      "expected_uniform_null_estimate": 6.5,
+      "observed_over_expected_estimate": 1.85
+    }
+  },
+  "joint_null_under_uniform_density": {
+    "p_joint_three_exact_hits_under_uniform_null": 0.33,
+    "interpretation": "Not significant under uniform-combinatorial null; the three EXACT hits are statistically expected from the enumeration size."
+  }
+}

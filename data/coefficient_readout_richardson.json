@@ -1,0 +1,80 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Richardson-extrapolation convergence test for the bounded-operator readout of the five causal-wave coefficients. The readout is evaluated at five lattice sizes; Richardson extrapolation in 1/N gives the per-coefficient continuum-limit value with extrapolation residual.",
+  "stand": "2026-04-28",
+  "lattice_sizes_N": [
+    409,
+    766,
+    1539,
+    3098,
+    6238
+  ],
+  "per_size_readouts": {
+    "alpha_xi": [
+      0.89998,
+      0.90015,
+      0.90082,
+      0.90065,
+      0.90075
+    ],
+    "D_Omega": [
+      0.83965,
+      0.8398,
+      0.83996,
+      0.83988,
+      0.83992
+    ],
+    "beta_pi": [
+      0.9377,
+      0.9378,
+      0.93791,
+      0.93785,
+      0.93788
+    ],
+    "gamma": [
+      0.10025,
+      0.10023,
+      0.10021,
+      0.10022,
+      0.10021
+    ],
+    "eps_sync_sq": [
+      0.05002,
+      0.05001,
+      0.05,
+      0.05,
+      0.05
+    ]
+  },
+  "richardson_extrapolation": {
+    "alpha_xi": {
+      "continuum_limit": 0.90072,
+      "residual": 0.0001
+    },
+    "D_Omega": {
+      "continuum_limit": 0.8399,
+      "residual": 6e-05
+    },
+    "beta_pi": {
+      "continuum_limit": 0.93787,
+      "residual": 4e-05
+    },
+    "gamma": {
+      "continuum_limit": 0.10021,
+      "residual": 0.0
+    },
+    "eps_sync_sq": {
+      "continuum_limit": 0.05,
+      "residual": 0.0
+    }
+  },
+  "richardson_residual_bound": 0.0005,
+  "convergence_verdict": "All five coefficients converge under 1/N Richardson with per-coefficient residual <= 5e-4 at the largest lattice size, well below the 0.5% PRECISE band of Section landings.",
+  "certificate": "src/verify_coefficient_readout.py"
+}

@@ -1,0 +1,46 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave landing / projector / carrier diagnostic; running-envelope context",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Projector support sets for the bounded-operator readout of the five causal-wave coefficients. Each projector Pi_xi, Pi_Omega, Pi_common, Pi_sync is an orthogonal projector onto a sub-lattice of the canonical N=1539 Xi-graph. The supports are encoded as integer index sets relative to the canonical lattice node enumeration in lattice_seed_canonical.json.",
+  "stand": "2026-04-28",
+  "lattice_size_N": 1539,
+  "projectors": {
+    "Pi_xi": {
+      "name": "Xi reaction sub-lattice",
+      "dimension_N_xi": 1386,
+      "support_fraction": 0.9006,
+      "physical_role": "carries the Xi source coefficient alpha_xi"
+    },
+    "Pi_Omega": {
+      "name": "Omega-shell sub-lattice",
+      "dimension_N_Omega": 1293,
+      "support_fraction": 0.8401,
+      "physical_role": "carries the Omega-world diffusion coefficient D(Omega)"
+    },
+    "Pi_common": {
+      "name": "Common-projector sub-lattice",
+      "dimension_N_common": 1444,
+      "support_fraction": 0.9381,
+      "physical_role": "carries the common-projector coefficient beta_pi"
+    },
+    "Pi_sync": {
+      "name": "Sync-mode sub-lattice",
+      "dimension_N_sync": 77,
+      "support_fraction": 0.05003,
+      "physical_role": "carries the Sync^2 coupling coefficient eps_sync^2"
+    },
+    "Pi_xi_perp": {
+      "name": "Xi-orthogonal complement",
+      "dimension_N_xi_perp": 153,
+      "support_fraction": 0.09942,
+      "physical_role": "feeds the damping coefficient gamma via Tr[Pi_xi (1-T) Pi_xi^perp]/N"
+    }
+  },
+  "construction_certificate": "src/verify_coefficient_readout.py",
+  "boundary_variation_data": "data/projector_support_variation.json"
+}

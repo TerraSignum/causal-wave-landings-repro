@@ -1,0 +1,43 @@
+{
+  "method": "reduction_null_v2_n100k",
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "trials": 100000,
+  "seed": 20260502,
+  "threshold_pct": 0.3,
+  "coefficient_range": [
+    0.1,
+    1.0
+  ],
+  "obs_residuals_pct": {
+    "C1": 0.10299999999998644,
+    "C2": 0.26906043144912134,
+    "C3": 0.20999999999998797,
+    "C4": 0.20955992415925356,
+    "C5": 0.04371421564969149,
+    "max": 0.26906043144912134
+  },
+  "per_condition_hits": {
+    "C1": 605,
+    "C2": 104,
+    "C3": 171,
+    "C4": 28,
+    "C5": 655
+  },
+  "per_condition_pass_rate": {
+    "C1": 0.00605,
+    "C2": 0.00104,
+    "C3": 0.00171,
+    "C4": 0.00028,
+    "C5": 0.00655
+  },
+  "joint_hits": 0,
+  "joint_pass_rate": 0.0,
+  "ci95_upper_bound_on_p_when_zero_hits": 2.995687401941005e-05,
+  "max_le_obs_hits": 0,
+  "max_le_obs_rate": 0.0,
+  "interpretation": "Under n=100000 uniform [0.1, 1.0]^5 trials, the joint pass rate at 0.3% per-condition threshold is 0/100000. Zero observed hits give a 95% upper bound p < 3.00e-05. This is the controlled likelihood that a uniformly drawn 5-tuple satisfies the fixed C1..C5 system to within the manuscript's pre-registered threshold; it is conditional on the alphabet of candidate conditions disclosed in outputs/admissible_R_conditions.json and on the threshold fixed before the test was run, and is NOT a p-value of physical correctness of System R."
+}

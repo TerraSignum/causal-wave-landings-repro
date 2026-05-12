@@ -1,0 +1,65 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave landing / projector / carrier diagnostic; running-envelope context",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "External benchmark target values for particle-physics observables used in causal-wave landings. Sources are the Particle Data Group (PDG 2024) and standard textbooks where indicated.",
+  "stand": "2026-04-26",
+  "targets": {
+    "alpha_dn_yukawa_exponent": {
+      "value": 1.8333333333333333,
+      "exact_form": "11/6",
+      "role": "down-sector Yukawa scaling exponent (compact reduction of the SM down-quark Yukawa hierarchy)",
+      "uncertainty": null,
+      "source": "structural target derived from SM hierarchy fits"
+    },
+    "Omega_DM_h2": {
+      "value": 0.12,
+      "role": "Cold dark matter physical density",
+      "uncertainty": 0.001,
+      "source": "Planck 2018 + WMAP joint fit"
+    },
+    "w_DE": {
+      "value": -1.0,
+      "role": "Dark energy equation of state (cosmological-constant limit)",
+      "uncertainty": null,
+      "source": "Planck 2018 cosmology"
+    },
+    "alpha_s_M_Z": {
+      "value": 0.1179,
+      "role": "Strong coupling at M_Z",
+      "uncertainty": 0.0009,
+      "source": "PDG 2024"
+    },
+    "alpha_cl_lepton_yukawa": {
+      "value": 1.3333333333333333,
+      "exact_form": "4/3",
+      "role": "charged-lepton Yukawa cluster exponent",
+      "uncertainty": null,
+      "source": "structural target derived from SM hierarchy fits"
+    },
+    "sin2_theta_W": {
+      "value": 0.23122,
+      "role": "Weinberg mixing angle (on-shell scheme value at M_Z)",
+      "uncertainty": 4e-05,
+      "source": "PDG 2024"
+    },
+    "BH_entropy_quarter": {
+      "value": 0.25,
+      "exact_form": "1/4",
+      "role": "Bekenstein-Hawking horizon area-to-entropy coefficient",
+      "uncertainty": null,
+      "source": "Bekenstein 1973; Hawking 1975"
+    },
+    "Einstein_gap_two_thirds": {
+      "value": 0.6666666666666666,
+      "exact_form": "2/3",
+      "role": "Asymptotic exponent of the Einstein-identity gap on finite correlation lattices",
+      "uncertainty": null,
+      "source": "structural target (continuum-limit program)"
+    }
+  }
+}

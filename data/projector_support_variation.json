@@ -1,0 +1,39 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave landing / projector / carrier diagnostic; running-envelope context",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Boundary-projector-support variation scan for the bounded-operator readout. Each projector Pi_bullet is shifted at its lattice boundary by +/-1, +/-2, +/-3 nodes and the readout coefficients are recomputed; the maximum drift on each carrier coefficient is reported.",
+  "stand": "2026-04-28",
+  "scan_setup": {
+    "boundary_shift_steps": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "projectors_scanned": [
+      "Pi_xi",
+      "Pi_Omega",
+      "Pi_common",
+      "Pi_sync"
+    ],
+    "regime": "canonical_N_1539"
+  },
+  "max_drift_per_coefficient": {
+    "alpha_xi": 0.0001,
+    "D_Omega": 8e-05,
+    "beta_pi": 6e-05,
+    "gamma": 4e-05,
+    "eps_sync_sq": 0.0001
+  },
+  "max_drift_overall": 0.0001,
+  "drift_verdict": "Boundary-shift drift bounded by 1e-4 on every coefficient. Combined with the Richardson residual <= 5e-4, the inferred per-coefficient uncertainty is sigma_c <= 5e-4 reported in (P5) of Section coefficients-provenance.",
+  "certificate": "src/verify_coefficient_readout.py"
+}

@@ -1,0 +1,31 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "running",
+    "branch_rationale": "Causal-wave landing / projector / carrier diagnostic; running-envelope context",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "stand": "2026-04-28",
+  "audit": "R-hypothesis structural-stability via loop-form pattern",
+  "measured_deviations": {
+    "delta_C1": 0.0010299999999998644,
+    "delta_C2": 0.0022600000000000398,
+    "delta_C3": -0.00020999999999998797
+  },
+  "loop_form_predictions": {
+    "delta_C1_form": "gamma^3 / (1 - 2*gamma^2)",
+    "delta_C1_value": 0.0010269383598563175,
+    "delta_C2_form": "N_gen^2/2 * gamma^2 * eps_sync_sq",
+    "delta_C2_value": 0.0022594599224999997,
+    "delta_C3_form": "-2*gamma^4 / (1 - 2*gamma^2)",
+    "delta_C3_value": -0.00020581898608240312
+  },
+  "pct_match": {
+    "C1": 0.2972466158783735,
+    "C2": 0.02389723451504685,
+    "C3": 1.9909590083738524
+  },
+  "shared_kernel_C1_C3": "1/(1 - 2*gamma^2)",
+  "verdict": "All three measured constraint deviations admit a closed-form one-loop self-energy interpretation with match accuracies C1: 0.30%, C2: 0.02%, C3: 1.99%. C1 and C3 share the resummation kernel 1/(1 - 2*gamma^2) \u2014 the structural stability witness for R."
+}

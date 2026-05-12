@@ -1,0 +1,30 @@
+{
+  "branch_metadata": {
+    "causal_wave_branch": "neutral_internal",
+    "branch_rationale": "System-R coefficient derivation / search-space audit; branch-blind algebraic test",
+    "schema": "worldformula/branch_metadata/v1"
+  },
+  "schema_version": "1.0.0",
+  "release": "v0.1.0",
+  "description": "Retarded-shell coefficients c_n that define the bounded operator T = sum_n c_n sum_{(i,j) in L_n^-} W_ij^(n) (|i><j| + |j><i|) on the canonical lattice. The shell coefficients enter the spectral-readout formulas for the five causal-wave coefficients in src/verify_coefficient_readout.py. Values come from the IR-hyperbolicity certificate of Section~3 of the manuscript and are tested in tests/test_ir_hyperbolicity.py.",
+  "stand": "2026-04-28",
+  "shell_coefficients": {
+    "c_0": 1.0,
+    "c_1": -0.5,
+    "c_2": -0.25,
+    "c_3": -0.125,
+    "c_4": -0.0625,
+    "c_5": -0.03125,
+    "c_6": -0.015625,
+    "c_7": -0.0078125
+  },
+  "shell_weight_normalisation": "geometric-decay with ratio 1/2 by retarded-shell index",
+  "moment_conditions": {
+    "linear_spatial_moment": 0.0,
+    "linear_temporal_moment": 0.0,
+    "Z_tau_positive": true,
+    "Z_x_positive_isotropic": true,
+    "m_eff_squared_finite": true
+  },
+  "irhyperbolicity_certificate": "src/verify_ir_hyperbolicity.py"
+}
