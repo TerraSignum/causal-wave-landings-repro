@@ -7,7 +7,7 @@ authors:
 version: 0.1.0
 date-released: 2026-04-26
 license: MIT
-repository-code: "https://github.com/[anonymized]/causal-wave-landings-repro"
+repository-code: "https://github.com/TerraSignum/causal-wave-landings-repro"
 abstract: >-
   A reproducible Python package implementing the five-coefficient causal-wave
   transport equation and its eight cross-sector benchmark landings. The

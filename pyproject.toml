@@ -19,9 +19,9 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/[anonymized]/causal-wave-landings-repro"
-Homepage = "https://github.com/[anonymized]/causal-wave-landings-repro"
-Issues = "https://github.com/[anonymized]/causal-wave-landings-repro/issues"
+Repository = "https://github.com/TerraSignum/causal-wave-landings-repro"
+Homepage = "https://github.com/TerraSignum/causal-wave-landings-repro"
+Issues = "https://github.com/TerraSignum/causal-wave-landings-repro/issues"
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",

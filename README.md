@@ -3,7 +3,7 @@
 **Five-coefficient causal-wave transport law and ten cross-sector benchmark
 landings.**
 
-[![CI: reproduce](https://github.com/[anonymized]/causal-wave-landings-repro/actions/workflows/reproduce.yml/badge.svg)](https://github.com/[anonymized]/causal-wave-landings-repro/actions/workflows/reproduce.yml)
+[![CI: reproduce](https://github.com/TerraSignum/causal-wave-landings-repro/actions/workflows/reproduce.yml/badge.svg)](https://github.com/TerraSignum/causal-wave-landings-repro/actions/workflows/reproduce.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 This repository reproduces the ten cross-sector benchmark landings of
@@ -52,7 +52,7 @@ introduced.
 ## Installation (Windows PowerShell)
 
 ```powershell
-git clone https://github.com/[anonymized]/causal-wave-landings-repro.git
+git clone https://github.com/TerraSignum/causal-wave-landings-repro.git
 cd causal-wave-landings-repro
 
 py -3.11 -m venv .venv
@@ -66,7 +66,7 @@ pip install -r requirements.txt
 ## Installation (POSIX)
 
 ```bash
-git clone https://github.com/[anonymized]/causal-wave-landings-repro.git
+git clone https://github.com/TerraSignum/causal-wave-landings-repro.git
 cd causal-wave-landings-repro
 
 python3.11 -m venv .venv
