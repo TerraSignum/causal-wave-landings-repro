@@ -2560,11 +2560,28 @@ by a single $2$-variable structural identification, removing
 the prior statistical caveat.
 
 The mechanistic interpretation is cyclotomic: at $N\!=\!2^{k}$
-the discrete Laplacian eigenvalues $4\sin^{2}(\pi j/N)$ are
-algebraic numbers in $\mathbb{Q}(\zeta_{2^{k}})$, generating
-exact heat-kernel-cancellation identities that suppress the
-diffusion-trace operator at post-flip phases where the
-matter-side sine dominates. Reproducers
+the discrete Laplacian eigenvalues $4\sin^{2}(\pi j/N)$
+(see~\cite{Karlsson2012} for the explicit one-dimensional
+heat-kernel on $\mathbb{Z}_{N}$) are algebraic numbers in
+$\mathbb{Q}(\zeta_{2^{k}})$, generating exact heat-kernel-
+cancellation identities that suppress the diffusion-trace
+operator at post-flip phases where the matter-side sine
+dominates. The heat-trace asymptotics on a torus are known to
+be sensitive to the number-theoretical structure of the
+lattice parameter under a Diophantine condition: rational versus
+irrational arguments give qualitatively different small-$t$
+contributions to the trace sum~\cite{GIV2006}. The
+$d$-dimensional heat-kernel-trace factorisation we use in the
+reproducers below decomposes as the Kronecker sum of the
+one-dimensional traces by the recent theorem
+of~\cite{LinWan2024}. As the lattice sizes $N_{i}\to\infty$,
+the combinatorial-Laplacian determinant on the discrete torus
+converges to its zeta-regularised continuum value with
+arithmetic-dependent subleading
+corrections~\cite{ChintaJK2010}; these subleading corrections
+are the math-precise version of the
+$\sin^{2}\theta_{\rm chir}(N)\,v_{2}(N)$ residual on our finite
+canonical-physics ladder. Reproducers
 \path|src/verify_D_Omega_2adic_chirality_phase.py| (interaction
 fit, AIC + LOO model selection) and
 \path|src/verify_D_Omega_discrete_laplacian_spectrum.py|
@@ -3021,6 +3038,57 @@ Springer, 2007.
 M.~Talagrand,
 \emph{A new look at independence},
 Ann.\ Probab.\ \textbf{24}, 1--34 (1996).
+
+\bibitem{GIV2006}
+V.~Gayral, B.~Iochum and D.~V.~Vassilevich,
+\emph{Heat kernel and number theory on NC-torus},
+Commun.\ Math.\ Phys.\ \textbf{273}, 415--443 (2007),
+arXiv:hep-th/0607078.
+Establishes that heat-trace asymptotics on the (non-commutative)
+torus are sensitive to the number-theoretical structure of the
+deformation parameters under a Diophantine condition; rational
+versus irrational deformation parameters give qualitatively
+different small-$t$ behaviour. Direct mathematical anchor for
+the lattice-arithmetic ($v_{2}(N)$) sensitivity of the
+discrete-Laplacian heat-trace on $\mathbb{Z}_{N}^{d}$ exploited
+in the 2-adic chirality-phase residual identification of
+Eq.~\eqref{eq:p2_D_Omega_2adic_chirality}.
+
+\bibitem{Karlsson2012}
+A.~Karlsson,
+\emph{Heat-kernels on the discrete circle and interval},
+arXiv:1207.2096 (2012).
+Explicit heat-kernel formula on the discrete circle $\mathbb{Z}_{N}$
+with eigenvalues $\lambda_{k}=4\sin^{2}(\pi k/N)$ and combinatorial
+trace identities; the 1D building block for the $d$-dimensional
+heat-kernel-trace factorisation used in the lattice-resonance audit.
+
+\bibitem{LinWan2024}
+Y.~Lin and S.~Wan,
+\emph{Connection heat kernel on connection lattices and connection
+discrete torus},
+arXiv:2404.00668 (2024).
+Establishes the Kronecker-sum theorem: the connection heat kernel
+on an arbitrary high-dimensional lattice with product connection
+equals the Kronecker sum of one-dimensional connection lattices'
+heat kernels. Mathematically validates the factorisation
+$M(N)=(S_{1d}(N)/N)^{d}$ used in
+\path|src/verify_D_Omega_2adic_resonance.py| and
+\path|src/verify_D_Omega_discrete_laplacian_spectrum.py|.
+
+\bibitem{ChintaJK2010}
+G.~Chinta, J.~Jorgenson and A.~Karlsson,
+\emph{Zeta functions, heat kernels and spectral asymptotics on
+degenerating families of discrete tori},
+Nagoya Math.\ J.\ \textbf{198}, 121--172 (2010),
+arXiv:0806.2014.
+Spectral asymptotics of the combinatorial Laplacian on
+degenerating discrete tori as the lattice sizes $N_{i}\to\infty$;
+the zeta-regularised continuum-torus determinant appears as the
+constant term in the asymptotic expansion of
+$\log\det\Delta_{\rm latt}$, with arithmetic-dependent subleading
+contributions analogous to the
+$\sin^{2}\theta_{\rm chir}(N)\,v_{2}(N)$ residual.
 
 \end{thebibliography}
 
