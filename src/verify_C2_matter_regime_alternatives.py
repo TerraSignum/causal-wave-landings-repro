@@ -144,7 +144,7 @@ def main():
               f"{rG_v:>9.2f}% {rH_v:>10.2f}%")
     n = len(rows)
     print()
-    print(f"Mean residuals (across 8 regimes):")
+    print(f"Mean residuals (across 10 regimes):")
     for k, v in sums.items():
         print(f"  {k}: mean rel err = {v/n:.2f}%")
     best = min(sums.items(), key=lambda x: x[1])
