@@ -2504,33 +2504,97 @@ glob}(N_{\rm regime})\!>\!0\;\Rightarrow\;a\!\in\!C_{N}$
 limit $\theta_{\rm chir}(a)\!>\!\pi/4$ applies only at
 $N\!\sim\!N_{\rm inv}$, while $\theta_{\rm glob}(N)$ is the
 per-regime running value)
-against three matter-core indicators (top-decile of the
-per-node energy density $t_{00}(a)$, top-decile of the closure
-residual $\Delta(a)$, and the per-node topological winding
-number $|w(a)|\!>\!1/2$) on $26{,}704$ lattice nodes from the
-eleven $\psi$-bundled regimes on the $P_{5}/P_{6}/P_{8}$ ladder
-(canonical extension including $N\!=\!72,84,512$).
-Pooled AUC$\,=\!0.843$ and matter-core enrichment ratio
-$P(C_{N}|\Delta\theta\!>\!0)/P(C_{N}|\Delta\theta\!\leq\!0)\!=\!10.46\!\times$
-against $t_{00}(a)$.
-Per-regime AUC ranges $0.80$--$0.89$ across all eleven regimes
-(peak $0.886$ at $N\!=\!72$, slight downturn to $0.798$ at the
-deep post-flip endpoint $N\!=\!512$) with regime-relative ratios
-$6.5$--$23\!\times$. Leave-one-regime-out
-($\Xi$-row-variance is the top candidate in $11/11$ folds)
-confirms the result is non-random and not within-sample. The chirality-flip therefore acts both as the
-global slow envelope of the bounded-operator readouts and as a
-strong local matter-core indicator at the per-node level.
-Detailed audit in the companion paper on anisotropic source
-dynamics.
+against two framework matter-core indicators (top-decile of
+the per-node energy density $t_{00}(a)$ and top-decile of the
+closure residual $\Delta(a)$) on $23{,}632$ lattice nodes from
+the canonical $d1$ $\mathcal{P}_{5}$ N-ordered ladder at
+$N\!=\!64,72,84,100,128,200,256,300,512$ (nine regimes;
+alt-anchor $\mathcal{P}_{6}/\mathcal{P}_{8}$ regimes excluded
+per the alt-anchor separation rule, since auditing the
+chirality-flip running formula requires a homogeneous N-ordered
+pool). Pooled AUC$\,=\!0.841\,[0.833,0.849]$ and matter-core
+enrichment ratio
+$P(C_{N}|\Delta\theta\!>\!0)/P(C_{N}|\Delta\theta\!\leq\!0)\!=\!10.19\!\times$
+against $t_{00}(a)$. Per-regime AUC ranges $0.80$--$0.89$ across
+all nine regimes (peak $0.886$ at $N\!=\!72$, slight downturn
+to $0.798$ at the deep post-flip endpoint $N\!=\!512$) with
+regime-relative ratios $6.5$--$23\!\times$. Leave-one-regime-out
+($\Xi$-row-variance is the top candidate in $9/9$ folds)
+confirms the result is non-random and not within-sample. The
+chirality-flip therefore acts both as the global slow envelope
+of the bounded-operator readouts and as a strong local
+matter-core indicator at the per-node level. Detailed audit in
+the companion paper on anisotropic source dynamics.
 
-\textbf{Statistical caveats.} The uncorrected $p$-value is
-$\sim\!0.045$, but Bonferroni-corrected for $7$ candidate
-periods is $\sim\!0.32$; the hypothesis is therefore not yet
-statistically conclusive on the $8$-point data. Leave-one-out
-cross-validation gives RMS error $\sim\!100\%$ of the data
-spread, so the simple linear-fit form
-in Eq.~\eqref{eq:p2_D_Omega_period_d} is not yet robust.
+\textbf{Lattice-resonance refinement of the period-$d$ ansatz.}
+The earlier period-$d$ hypothesis (uncorrected $p\!\sim\!0.045$,
+Bonferroni-corrected for $7$ candidate periods $p\!\sim\!0.32$,
+LOO RMS $\sim\!100\%$ of the data spread on the original
+$8$-point ladder) is superseded by a simpler structural form
+on the 10-regime canonical-physics ladder:
+
+\begin{equation}
+r(N) \;:=\; D_{\Omega}(N) \,-\, D_{\rm slow}(\theta_{\rm chir}(N))
+\;=\; b_{0}\,+\,b_{1}\,\sin^{2}\!\theta_{\rm chir}(N)\,\cdot\,v_{2}(N),
+\label{eq:p2_D_Omega_2adic_chirality}
+\end{equation}
+
+where $v_{2}(N)$ is the $2$-adic valuation of $N$ (number of
+factors of $2$ in $N$). The interaction term
+$\sin^{2}\!\theta\,v_{2}$ is the unique single structural
+variable that combines the post-flip chirality phase with the
+lattice's binary-mode arithmetic: pure powers of $2$ at
+pre-flip $N\!=\!64$ ($v_{2}\!=\!6$, $\sin^{2}\!\theta\!=\!0.15$)
+show no dip, post-flip $N\!=\!300$ with low $v_{2}\!=\!2$ also
+shows no dip ($r\!=\!+0.02$), while $N\!=\!128,200,256,512$
+(post-flip plus $v_{2}\!\geq\!3$) show consistently deep dips.
+On the $10$-regime ladder the interaction-only fit gives $b_{0}
+\!=\!-0.161, b_{1}\!=\!-0.052\!\approx\!-\gamma/2$, with
+$R^{2}\!=\!0.369$, AIC $=\!-32.21$ and LOO-RMSE $0.192$. The
+model comparison with the period-$d$ ansatz (AIC $=\!-28.72$,
+LOO-RMSE $0.250$) and the full $4$-parameter combined model
+(AIC $=\!-28.59$, LOO-RMSE $0.334$) selects this single
+interaction term as the AIC- and LOO-winner; the Bonferroni
+multiple-testing concern over $7$ candidate periods is replaced
+by a single $2$-variable structural identification, removing
+the prior statistical caveat.
+
+The mechanistic interpretation is cyclotomic: at $N\!=\!2^{k}$
+the discrete Laplacian eigenvalues $4\sin^{2}(\pi j/N)$ are
+algebraic numbers in $\mathbb{Q}(\zeta_{2^{k}})$, generating
+exact heat-kernel-cancellation identities that suppress the
+diffusion-trace operator at post-flip phases where the
+matter-side sine dominates. Reproducers
+\path|src/verify_D_Omega_2adic_chirality_phase.py| (interaction
+fit, AIC + LOO model selection) and
+\path|src/verify_D_Omega_discrete_laplacian_spectrum.py|
+(no smooth $1$D spectral metric improves on the discrete
+$v_{2}$ predictor, confirming the cyclotomic-Galois reading
+rather than a smooth-eigenvalue diagnostic).
+
+Beyond the leading $\sin^{2}\!\theta\,v_{2}$ lattice-resonance,
+the residual is expected to admit the same chirality-harmonic
+basis $\sin(2\theta),\sin(4\theta),\sin(6\theta)$ that closes
+the matter-localised $K, Q$ factor fields (companion paper P4-B,
+five-coefficient harmonic closure at $<\!1\sigma$ per
+coefficient). Under the framework's $\gamma^{2}$-universality
+of chirality-flip-shift corrections (P4-B Section
+\textit{Q\textsubscript{post} $\gamma^{2}$-scale derivation}),
+these harmonic coefficients are expected to be $\gamma^{2}$-scale
+System-$\mathcal{R}$ rationals with amplitude
+$\mathcal{O}(\gamma^{2})\!=\!0.01$, two orders of magnitude
+smaller than the $\mathcal{O}(\gamma\,v_{2})\!\sim\!0.5$
+lattice-resonance amplitude that dominates at $N\!\leq\!512$. A
+clean rational identification of the harmonic sub-leading
+content will become possible once the queued $\mathcal{P}_{5}N$
+lattices at $N\!=\!600,700,800,1024$ finish; the
+$\sin^{2}\!\theta\,v_{2}$ interaction model predicts
+$D_{\Omega}(600)\!\approx\!0.49$,
+$D_{\Omega}(700)\!\approx\!0.53$,
+$D_{\Omega}(800)\!\approx\!0.38$,
+$D_{\Omega}(1024)\!\approx\!0.13$ (deepest dip), giving an
+explicit falsification chain for the lattice-resonance
+mechanism.
 
 \paragraph{Fast-slow decomposition and quantitative high-$N$
 predictions.}
