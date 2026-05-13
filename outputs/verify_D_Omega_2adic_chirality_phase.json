@@ -1,0 +1,247 @@
+{
+  "title": "D_Omega 2-adic x chirality-phase residual audit",
+  "stand": "2026-05-13",
+  "n_data": 10,
+  "data": [
+    {
+      "regime": "P5",
+      "N": 50,
+      "v2": 1,
+      "log2_N": 5.643856189774724,
+      "theta_deg": 18.43494882292201,
+      "cos2_theta": 0.8999999999999999,
+      "sin2_theta": 0.1,
+      "post_flip": false,
+      "D_obs": 0.839964,
+      "D_slow_pred": 0.8322898163397447,
+      "residual": 0.007674183660255296
+    },
+    {
+      "regime": "P5N64",
+      "N": 64,
+      "v2": 6,
+      "log2_N": 6.0,
+      "theta_deg": 22.521114577421017,
+      "cos2_theta": 0.853292712376929,
+      "sin2_theta": 0.14670728762307095,
+      "post_flip": false,
+      "D_obs": 0.7597612114548454,
+      "D_slow_pred": 0.8298562808718591,
+      "residual": -0.07009506941701371
+    },
+    {
+      "regime": "P5N72",
+      "N": 72,
+      "v2": 3,
+      "log2_N": 6.169925001442312,
+      "theta_deg": 24.709919161642496,
+      "cos2_theta": 0.8252556425412256,
+      "sin2_theta": 0.17474435745877442,
+      "post_flip": false,
+      "D_obs": 0.6702956471721387,
+      "D_slow_pred": 0.8283954980404651,
+      "residual": -0.15809985086832634
+    },
+    {
+      "regime": "P5N84",
+      "N": 84,
+      "v2": 2,
+      "log2_N": 6.392317422778761,
+      "theta_deg": 27.805174403848543,
+      "cos2_theta": 0.7824089807881621,
+      "sin2_theta": 0.21759101921183788,
+      "post_flip": false,
+      "D_obs": 0.4311232895180821,
+      "D_slow_pred": 0.8261631082708422,
+      "residual": -0.39503981875276006
+    },
+    {
+      "regime": "P5N100",
+      "N": 100,
+      "v2": 2,
+      "log2_N": 6.643856189774724,
+      "theta_deg": 31.60228084649124,
+      "cos2_theta": 0.7254032373231658,
+      "sin2_theta": 0.2745967626768341,
+      "post_flip": false,
+      "D_obs": 0.6142757508881663,
+      "D_slow_pred": 0.8231930043394219,
+      "residual": -0.20891725345125556
+    },
+    {
+      "regime": "P5N128",
+      "N": 128,
+      "v2": 7,
+      "log2_N": 7.0,
+      "theta_deg": 37.428379225446726,
+      "cos2_theta": 0.630616541864189,
+      "sin2_theta": 0.36938345813581114,
+      "post_flip": false,
+      "D_obs": 0.2946492624539301,
+      "D_slow_pred": 0.8182544434205227,
+      "residual": -0.5236051809665926
+    },
+    {
+      "regime": "P5N200",
+      "N": 200,
+      "v2": 3,
+      "log2_N": 7.643856189774724,
+      "theta_deg": 48.633892151491644,
+      "cos2_theta": 0.4367465619634886,
+      "sin2_theta": 0.5632534380365114,
+      "post_flip": true,
+      "D_obs": 0.337080556960031,
+      "D_slow_pred": 0.8081534614055962,
+      "residual": -0.4710729044455652
+    },
+    {
+      "regime": "P5N256",
+      "N": 256,
+      "v2": 8,
+      "log2_N": 8.0,
+      "theta_deg": 54.70576905102723,
+      "cos2_theta": 0.3338244653412973,
+      "sin2_theta": 0.6661755346587027,
+      "post_flip": true,
+      "D_obs": 0.38701499642385895,
+      "D_slow_pred": 0.8027910311445947,
+      "residual": -0.41577603472073577
+    },
+    {
+      "regime": "P5N300",
+      "N": 300,
+      "v2": 2,
+      "log2_N": 8.228818690495881,
+      "theta_deg": 58.39771915350877,
+      "cos2_theta": 0.2745967626768341,
+      "sin2_theta": 0.725403237323166,
+      "post_flip": true,
+      "D_obs": 0.8245985565812509,
+      "D_slow_pred": 0.7997051590580264,
+      "residual": 0.024893397523224503
+    },
+    {
+      "regime": "P5N512",
+      "N": 512,
+      "v2": 9,
+      "log2_N": 9.0,
+      "theta_deg": 69.01729210475246,
+      "cos2_theta": 0.12822570856119403,
+      "sin2_theta": 0.8717742914388059,
+      "post_flip": true,
+      "D_obs": 0.2726858783497702,
+      "D_slow_pred": 0.7920789583131499,
+      "residual": -0.5193930799633797
+    }
+  ],
+  "T1_pre_post_welch": {
+    "mean_a": -0.345337155401614,
+    "mean_b": -0.22468049829928216,
+    "se": 0.14958700737680727,
+    "t": -0.8065985089092643,
+    "n_a": 4,
+    "n_b": 6,
+    "var_a": 0.06271241383382,
+    "var_b": 0.04018901590496395
+  },
+  "T2_full_interaction_ols": {
+    "beta": [
+      -0.1295754697851158,
+      0.04468187064872828,
+      -0.018913473769619788,
+      -0.037587918119781925
+    ],
+    "names": [
+      "b0 (intercept)",
+      "b1 (sin^2 only)",
+      "b2 (v_2 only)",
+      "b3 (interaction)"
+    ],
+    "rss": 0.25754155624615666,
+    "r2": 0.39262159738845936,
+    "aic": -28.59159281413085
+  },
+  "T3_model_comparison": {
+    "period_d": {
+      "r2": 0.10533757039873715,
+      "aic": -28.718648027857014,
+      "beta": [
+        -0.2848069086618044,
+        -0.08626649194437373
+      ]
+    },
+    "interaction_only": {
+      "r2": 0.36897695306444356,
+      "aic": -32.20968889946553,
+      "beta": [
+        -0.16127058872576078,
+        -0.05220667883616734
+      ]
+    },
+    "full_interaction": {
+      "r2": 0.39262159738845936,
+      "aic": -28.59159281413085,
+      "beta": [
+        -0.1295754697851158,
+        0.04468187064872828,
+        -0.018913473769619788,
+        -0.037587918119781925
+      ]
+    }
+  },
+  "T4_LOO_RMSE": {
+    "period_d": 0.24965933349937044,
+    "interaction_only": 0.19214544032958203,
+    "full_interaction": 0.3336177378307609
+  },
+  "T4_winner_aic": "interaction_only",
+  "T4_winner_loo_rmse": "interaction_only",
+  "T5_predictions": [
+    {
+      "N": 600,
+      "v2": 3,
+      "theta_deg": 71.56505117707799,
+      "D_slow_pred": 0.7906083470577033,
+      "residual_interaction_only": -0.30222862158341257,
+      "D_total": 0.48837972547429076,
+      "model": "interaction_only"
+    },
+    {
+      "N": 700,
+      "v2": 2,
+      "theta_deg": 73.78245247035964,
+      "D_slow_pred": 0.7894621181101387,
+      "residual_interaction_only": -0.25753968153815887,
+      "D_total": 0.5319224365719798,
+      "model": "interaction_only"
+    },
+    {
+      "N": 800,
+      "v2": 5,
+      "theta_deg": 75.50811005603832,
+      "D_slow_pred": 0.7886608606694204,
+      "residual_interaction_only": -0.405957669635834,
+      "D_total": 0.3827031910335864,
+      "model": "interaction_only"
+    },
+    {
+      "N": 1024,
+      "v2": 10,
+      "theta_deg": 78.26203185366184,
+      "D_slow_pred": 0.7875544639576474,
+      "residual_interaction_only": -0.6617309811979177,
+      "D_total": 0.12582348275972965,
+      "model": "interaction_only"
+    },
+    {
+      "N": 2048,
+      "v2": 11,
+      "theta_deg": 83.57718781237328,
+      "D_slow_pred": 0.7860501494448642,
+      "residual_interaction_only": -0.7283577778107906,
+      "D_total": 0.05769237163407359,
+      "model": "interaction_only"
+    }
+  ],
+  "verdict": "AIC-min: interaction_only; LOO-RMSE-min: interaction_only. The refined 2-adic * chirality-phase residual model (interaction term sin^2(theta) * v_2(N)) is selected by both AIC and LOO over the period-d ansatz, addressing the Bonferroni concern with a single 2-variable interaction rather than 7 candidate periods."
+}
