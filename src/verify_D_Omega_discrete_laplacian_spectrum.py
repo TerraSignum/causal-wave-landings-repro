@@ -236,13 +236,13 @@ def main():
     post = [p for p in pts if p["sin2_theta"] > 0.5]
     pre = [p for p in pts if p["sin2_theta"] <= 0.5]
     print(f"  pre-flip subsample ({len(pre)} regimes):")
-    for p in sorted(pre, key=lambda r: r["v2"]):
+    for p in sorted(pre, key=lambda r: r["N"]):
         print(f"    N={p['N']:>4} v2={p['v2']} S_spec="
                 f"{p['spectral_entropy_1d']:.4f} avg_mu="
                 f"{p['avg_multiplicity_1d']:.3f} resid="
                 f"{p['residual']:+.4f}")
     print(f"  post-flip subsample ({len(post)} regimes):")
-    for p in sorted(post, key=lambda r: r["v2"]):
+    for p in sorted(post, key=lambda r: r["N"]):
         print(f"    N={p['N']:>4} v2={p['v2']} S_spec="
                 f"{p['spectral_entropy_1d']:.4f} avg_mu="
                 f"{p['avg_multiplicity_1d']:.3f} resid="
