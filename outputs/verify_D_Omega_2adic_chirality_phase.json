@@ -198,6 +198,24 @@
   "T4_winner_loo_rmse": "interaction_only",
   "T5_predictions": [
     {
+      "N": 256,
+      "v2": 8,
+      "theta_deg": 54.70576905102723,
+      "D_slow_pred": 0.8027910311445947,
+      "residual_interaction_only": -0.43950108621727246,
+      "D_total": 0.36328994492732225,
+      "model": "interaction_only"
+    },
+    {
+      "N": 512,
+      "v2": 9,
+      "theta_deg": 69.01729210475246,
+      "D_slow_pred": 0.7920789583131499,
+      "residual_interaction_only": -0.5708825527827186,
+      "D_total": 0.2211964055304313,
+      "model": "interaction_only"
+    },
+    {
       "N": 600,
       "v2": 3,
       "theta_deg": 71.56505117707799,
@@ -234,12 +252,39 @@
       "model": "interaction_only"
     },
     {
+      "N": 1536,
+      "v2": 9,
+      "theta_deg": 81.73961239422532,
+      "D_slow_pred": 0.7864736315580576,
+      "residual_interaction_only": -0.6214320077503965,
+      "D_total": 0.16504162380766108,
+      "model": "interaction_only"
+    },
+    {
       "N": 2048,
       "v2": 11,
       "theta_deg": 83.57718781237328,
       "D_slow_pred": 0.7860501494448642,
       "residual_interaction_only": -0.7283577778107906,
       "D_total": 0.05769237163407359,
+      "model": "interaction_only"
+    },
+    {
+      "N": 3072,
+      "v2": 10,
+      "theta_deg": 85.50270195785625,
+      "D_slow_pred": 0.7857185091823433,
+      "residual_interaction_only": -0.6801274730611875,
+      "D_total": 0.10559103612115583,
+      "model": "interaction_only"
+    },
+    {
+      "N": 4096,
+      "v2": 12,
+      "theta_deg": 86.5099398866379,
+      "D_slow_pred": 0.7855912429931967,
+      "residual_interaction_only": -0.7854291173038741,
+      "D_total": 0.00016212568932261195,
       "model": "interaction_only"
     }
   ],

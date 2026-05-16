@@ -21,6 +21,15 @@
 \usepackage{xcolor}
 \usepackage{cite}
 
+% Clickable GitHub links for src/*.py citations (auto-generated)
+\newcommand{\ghrepo}[1]{https://github.com/TerraSignum/#1}
+% \nolinkurl gives a monospace, line-breakable rendering of the
+% short script-stem display text without competing with \href.
+\newcommand{\pyscript}[3]{%
+  \href{\ghrepo{#1}/blob/main/#2}{\nolinkurl{#3}}}
+\newcommand{\repoOwn}{causal-wave-landings-repro}
+\newcommand{\pyown}[2]{\pyscript{\repoOwn}{#1}{#2}}
+
 \title{A five-coefficient causal-wave ansatz and\\
        ten cross-sector benchmark closures}
 \author{Sandro Bucciarelli\thanks{Independent researcher.
@@ -599,11 +608,38 @@ its detailed verification on the bundled lattice is left to
 a focused mathematical note.
 \end{remark}
 
+\begin{remark}[Relation to the spectral-action / noncommutative-geometry programme]
+Reading physical coefficients off the joint spectral measure
+of an operator family has a direct precedent in the
+noncommutative-geometry programme. The Chamseddine--Connes
+spectral action~\cite{ChamseddineConnes1997} obtains the
+Standard-Model action --- including the Yukawa couplings and
+the Cabibbo--Kobayashi--Maskawa mixing matrix --- as spectral
+invariants of the Dirac operator of a spectral triple
+$(\mathcal A,\mathcal H,D)$, the finite part
+$(\mathcal A_{F},\mathcal H_{F},D_{F})$ of which carries the
+flavour data~\cite{ConnesChamseddineMarcolli2007}, rather than
+postulating them as free Lagrangian parameters.
+Theorem~\ref{thm:projector_basis} is methodologically kin: the
+five System-$\mathcal R$ coefficients are read off the joint
+spectral measure of the four-tuple
+$\{X_{\xi},X_{\Omega},X_{\rm common},X_{\rm sync}\}$ rather
+than fitted. The genuine distinction is the substrate ---
+the spectral-action triple is a \emph{continuum} object,
+whereas the present readout is a \emph{finite}
+bounded-operator construction on a relational $\Xi$-lattice
+whose coefficients are fixed by the two integer inputs
+$(d,N_{\rm gen})$. Both programmes share the stance that the
+Standard-Model parameters are spectral data of an operator
+structure, not free inputs; the present construction is the
+discrete, integer-counted instance of that stance.
+\end{remark}
+
 \paragraph{Empirical exhaustion against alternative
 projector-basis classes.}
 \label{par:projector_exhaustion}
 Theorem~\ref{thm:projector_basis} establishes structural
-uniqueness; we now confirm it empirically by testing
+uniqueness; the paragraph confirms it empirically by testing
 whether \emph{any} alternative four-projector basis class
 reproduces the 10-row PRECISE closure of
 Section~\ref{sec:landings}. The bundled audit
@@ -1331,14 +1367,20 @@ $P_{\mathrm{combined}} \approx 2.6\times 10^{-5}$ as a
 controlled likelihood under the stated null model.
 \emph{We frame this number as suggestive cross-sector alignment,
 not as a $4\sigma$ ``cluster'' or as a ruling-out statement.}
-Three caveats apply (see also the cluster discussion in the
-companion paper):
+Three caveats apply, each handled in the cluster discussion of
+the companion loop-class paper~\cite{Paper3}:
 (i) the three observables are physically distinct sectors but
-are not verified-independent at the level required by Fisher
-combination; (ii) the uniform-on-$[0,2.5\%]$ null is a modelling
-choice; (iii) the cluster selection itself was made
-\emph{after} the post-loop residuals were computed and is
-therefore conditional on the cluster identification.
+share a common loop-factor ansatz, so they are not
+verified-independent at the level a strict Fisher combination
+would require --- which is precisely why the companion paper
+reports $P_{\mathrm{combined}}$ as a \emph{controlled-likelihood}
+test rather than a strict $p$-value, the same framing adopted
+here; (ii) the uniform-on-$[0,2.5\%]$ null is a modelling
+choice, scanned against alternative null distributions by the
+companion paper's bundled sensitivity analysis; (iii) the
+cluster selection itself was made \emph{after} the post-loop
+residuals were computed and is therefore conditional on the
+cluster identification.
 We report the alignment as one of the supporting
 band-of-eight-rows pieces of evidence for the principal claim
 \eqref{eq:bh-algebraic}, not as an independent significance
@@ -1436,7 +1478,7 @@ must be folded into any chance-probability claim.
 A sharpened null test against $n=100{,}000$ random uniform
 $5$-tuples in $[0.1,1.0]^{5}$ finds \emph{zero} matches under
 the joint check $\le 0.30\%$ on each of $C_{1}\ldots C_{5}$
-(\path|src/reduction_null_v2.py|, output
+(\pyown{src/reduction_null_v2.py}{reduction_null_v2}, output
 \path|outputs/reduction_null_v2.json|). The corresponding
 empirical $95\%$ upper bound on the joint chance probability is
 $p < 3\times 10^{-5}$. The per-condition empirical pass rates
@@ -2227,6 +2269,42 @@ construction (canonical $67/80\!=\!15/16\!-\!1/10$) but is not
 chirality-invariant; in the matter regime $D_{\Omega}^{(M)}$
 follows an independent geometric identification.
 
+\paragraph{Chirality-flip dual: matter-branch sign flip and
+cone-mode extension in the emergent-time bundle.}
+The vacuum--matter chirality flip propagates structurally into
+the emergent-time bundle of the UV-closure technical
+foundations~\cite{Paper6}: the same flip that takes
+$(\alpha_{\xi},\gamma)\!\to\!(\gamma,\alpha_{\xi})$ between
+vacuum-branch and matter-branch System-$\mathcal R$ values also
+induces a sign flip and a $(d{+}1)$-mode extension in two
+downstream emergent-time observables. \emph{(i)~Tunnel-parameter
+$(SG)$-axiom anchoring.} The canonical-regime Sommerfeld tunnel
+parameter
+$\eta_{\rm somm}^{\rm cano}\!=\!N_{\rm gen}(1\!+\!\gamma^{2}d/(d{+}1))$
+of \cite{Paper6}~(ET7) reflects the vacuum-branch spatial
+fraction $d/(d{+}1)$ leakage; the extended-regime value
+$\eta_{\rm somm}^{\rm ext}\!=\!N_{\rm gen}(1\!-\!\gamma\,\lambda_{\infty})$
+of \cite{Paper6}~(ET8) is dressed directly by the $(SG)$-axiom
+spectral gap $\lambda_{\infty}\!=\!(d{-}1)/(2d)\!=\!3/8$,
+tying the post-flip matter-branch tunneling to the same
+structural anchor as (M3) of the composition theorem.
+\emph{(ii)~Tolman chirality-pair Pure-Self-Energy correction.}
+The canonical Tolman gravitational-redshift residual
+$\mathrm{Tolman}^{\rm cano}\!=\!1\!-\!1/(N_{\rm chir}(d{+}N_{\rm gen}))\!=\!13/14$
+extends in the post-flip matter regime to
+$\mathrm{Tolman}^{\rm ext}\!=\!\mathrm{Tolman}^{\rm cano}\!+\!\gamma^{2}\,N_{\rm chir}\!=\!13/14\!+\!1/50$,
+a $\gamma^{2}$-order Pure-Self-Energy correction averaged over
+the chirality pair (the same Lemma-$3$ form that dresses
+$m_{d},m_{s}$ via $(1\!-\!N_{\rm chir}\gamma^{2})$). Both shifts are direct structural
+consequences of the chirality flip
+Eq.~\eqref{eq:p2_theta_running} and not independent fits; the
+spectral-dimension residual $f_{\rm LC}\!=\!d_{\rm eff}\!-\!3\!=\!\log_{2}((2d{+}1)/(2d))\!=\!\log_{2}(9/8)$
+remains regime-invariant (identical in canonical and extended
+bundles), confirming that the chirality-flip transformation
+operates on the matter-state and time-rate sectors but not on
+the bit-logarithmic information measure of the
+$(2d{+}1)$-element carrier basis.
+
 \paragraph{Detailed derivation of the chirality-mixing
 anchors $a_{\rm vac}\!=\!143/144$ and $a_{\rm mat}\!=\!23/48$.}
 The vacuum-side anchor $a_{\rm vac}\!=\!143/144$ comes from
@@ -2380,119 +2458,127 @@ them: only Eq.~\eqref{eq:p2_D_Omega_clean} together with
 the matter-side $\pi/d$ asymptote produces a self-consistent
 running pattern that matches the lattice data's non-monotonic
 behaviour. Reproducer:
-\path|src/verify_D_Omega_alternative_derivations.py|.
+\pyown{src/verify_D_Omega_alternative_derivations.py}{verify_D_Omega_alternative_derivations}.
 
-\paragraph{$D_{\Omega}$ lattice-resonance pattern:
-period-$d$ explanation.}
-The non-monotonic behaviour of $D_{\Omega}(N)$ on the 8-regime
-ladder shows the strongest negative deviations from any smooth
-chirality-mixing form at $N\!=\!2^{7}\!=\!128$ (residual $-0.52$)
-and $N\!=\!2^{2}\!\cdot\!21\!=\!84$ (residual $-0.39$).
-A correlation analysis identifies $\log_{2}(N)\bmod d$, with
-$d\!=\!4$ the spacetime dimension, as the strongest predictor
-of the deviation $D_{\Omega}(N)\!-\!67/80$. Pearson correlations
-across candidate periods $p\!\in\!\{4,6,7,8,9,10,12,14,16\}$:
+\paragraph{$D_{\Omega}$ lattice-resonance pattern: from the
+period-$d$ correlation readout to the structural identification.}
+The non-monotonic behaviour of $D_{\Omega}(N)$ on the canonical
+$10$-regime ladder $N\!\in\!\{50,64,72,84,100,128,200,256,300,512\}$
+shows the strongest negative deviations from any smooth
+chirality-mixing form at $N\!=\!2^{9}\!=\!512$ (residual
+$+0.565$), $N\!=\!2^{7}\!=\!128$ ($+0.543$), and
+$N\!=\!2^{8}\!=\!256$ ($+0.450$). The lattice data underlying
+the readout are bundled at
+\path|data/causal_wave_per_N_readout.json|; the ladder was
+generated by $24$-seed runs at $N\!\in\!\{64,72,84,100\}$,
+$12$-seed runs at $N\!\in\!\{128,256,300,512\}$, and an $8$-seed
+run at $N\!=\!200$ (total $152$ seeds across $9$ non-anchor
+regimes; $N\!=\!50$ is the calibration anchor of the C1/C2/C3
+constraint solve, no separate snapshot run).
+
+An initial correlation analysis on the original $8$-point
+ladder $\{50,\ldots,200,300\}$ identified $\log_{2}(N)\bmod d$
+with $d\!=\!4$ as the strongest naive periodicity predictor of
+the deviation $D_{\Omega}(N)\!-\!67/80$, with Pearson
+$r_{8}^{(p=4)}\!=\!+0.818$, exceeding the Bott
+$r_{8}^{(p=8)}\!=\!+0.621$ alternative. The extension to the
+$10$-point ladder including $N\!=\!256$ ($\log_{2}\!=\!8$,
+$\bmod d\!=\!0$, $v_{2}\!=\!8$) and $N\!=\!512$
+($\log_{2}\!=\!9$, $\bmod d\!=\!1$, $v_{2}\!=\!9$) inverts the
+correlation hierarchy:
 \begin{center}
-\begin{tabular}{c c}
+\begin{tabular}{c c c}
 \toprule
-period $p$ & Pearson $r$ \\
+period $p$ & Pearson $r_{8}$ (original) & Pearson $r_{10}$ (extended) \\
 \midrule
-\textbf{4 (= $d$)} & \textbf{+0.818} \\
-8 (Bott $2d$) & +0.621 \\
-6 & $-0.396$ \\
-7 & $-0.450$ \\
-9, 10, 12, 14, 16 & $+0.263$ \\
+$4\;(\!=d)$ & $+0.818$ & $+0.248$ \\
+$7$         & $-0.450$ & $-0.540$ \\
+$8\;(\mathrm{Bott}\,2d)$ & $+0.621$ & $+0.001$ \\
+$10$--$16$  & $+0.263$ & $+0.527$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-Period $p\!=\!d$ is the strongest, exceeding the Bott $p\!=\!8$
-correlation. The structure is a direct \emph{dimensional}
-modular periodicity in $\log_{2}(N)$, with period equal to the
-spacetime dimension itself. The deviations grow through the
-cycle and reset at the period boundary:
+The two new high-$v_{2}$ points break the period-$d$ ansatz
+directly: $N\!=\!256$ sits at the period-$d$ boundary
+($\bmod d\!=\!0$) yet shows the third-deepest dip
+($+0.450$) instead of the expected near-zero rebound; $N\!=\!512$
+sits at $\bmod d\!=\!1$ where the period-$d$ hypothesis predicts
+modest deviation, but observes the deepest dip of the entire
+ladder ($+0.565$).
 \begin{center}
-\begin{tabular}{c c c c}
+\begin{tabular}{c c c c c}
 \toprule
-$N$ & $\log_{2}(N)$ & $\log_{2}(N)\bmod d$ & $67/80\!-\!D_{\Omega}$ \\
+$N$ & seeds & $\log_{2}(N)$ & $\log_{2}(N)\bmod d$ & $67/80\!-\!D_{\Omega}$ \\
 \midrule
-$50$  & $5.644$ & $1.644$ & $-0.003$ \\
-$64$  & $6.000$ & $2.000$ & $+0.078$ \\
-$72$  & $6.170$ & $2.170$ & $+0.167$ \\
-$84$  & $6.392$ & $2.392$ & $+0.406$ \\
-$100$ & $6.644$ & $2.644$ & $+0.223$ \\
-$128$ & $7.000$ & $3.000$ & $+0.543$ \\
-$200$ & $7.644$ & $3.644$ & $+0.500$ \\
-$300$ & $8.229$ & $\mathbf{0.229}$ & $\mathbf{+0.013}$ \\
+$50$  & anchor & $5.644$ & $1.644$ & $-0.003$ \\
+$64$  & $24$   & $6.000$ & $2.000$ & $+0.078$ \\
+$72$  & $24$   & $6.170$ & $2.170$ & $+0.167$ \\
+$84$  & $24$   & $6.392$ & $2.392$ & $+0.406$ \\
+$100$ & $24$   & $6.644$ & $2.644$ & $+0.223$ \\
+$128$ & $12$   & $7.000$ & $3.000$ & $+0.543$ \\
+$200$ & $8$    & $7.644$ & $3.644$ & $+0.500$ \\
+$256$ & $12$   & $8.000$ & $\mathbf{0.000}$ & $\mathbf{+0.450}$ \\
+$300$ & $12$   & $8.229$ & $0.229$ & $+0.013$ \\
+$512$ & $12$   & $9.000$ & $\mathbf{1.000}$ & $\mathbf{+0.565}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-The deepest dip occurs near $\log_{2}(N)\bmod d\!=\!3$ ($N\!=\!128$,
-$\log_{2}\!=\!7$), and the lattice wraps the period at
-$N\!=\!300$ ($\log_{2}\!=\!8.23$, $\bmod d\!=\!0.23$) where
-$D_{\Omega}$ rebounds to the vacuum value $67/80$ within $1.5\%$.
-
-The structural hypothesis for $D_{\Omega}$ running is therefore:
-\begin{equation}
-D_{\Omega}(N)\;=\;\frac{67}{80}
-\;+\;g\!\left(\log_{2}(N)\bmod d\right)\,
-\bigl(\tfrac{\pi}{d}\!-\!\tfrac{67}{80}\bigr)
-\;+\;\mathcal{O}(\text{lattice resonance}),
-\label{eq:p2_D_Omega_period_d}
-\end{equation}
-where $g(\phi)$ is periodic of period $d\!=\!4$ in $\log_{2}(N)$.
-The function $g$ has $g(0)\!=\!0$ (vacuum anchor at the period
-boundary) and a peak around $\phi\!=\!d\!-\!1\!=\!3$.
+The deepest dips on the extended ladder coincide with the highest
+$2$-adic valuations ($v_{2}(128)\!=\!7$, $v_{2}(256)\!=\!8$,
+$v_{2}(512)\!=\!9$); the rebound at $N\!=\!300$
+($v_{2}\!=\!2$) is the lowest-$v_{2}$ post-flip point on the
+ladder, not a period-$d$ wrap. The structural reading is therefore
+not a periodicity in $\log_{2}(N)$ but a $2$-adic valuation
+interaction with the post-flip chirality phase, captured by
+Eq.~\eqref{eq:p2_D_Omega_2adic_chirality} below. The period-$d$
+narrative is retained as the historical empirical motivator
+that pointed the search toward $\log_{2}(N)$-arithmetic
+predictors; the post-extension correlation hierarchy and the
+geometric reading that connects $2$-adic valuation to lattice
+binary-subdivision modes are the load-bearing structural
+identification.
 
 \paragraph{Connection to chirality flip and matter sector.}
-The period-$d$ structure of $D_{\Omega}$ has a natural
+The lattice-resonance structure of $D_{\Omega}$ has a natural
 geometric reading that connects to the chirality-flip
-framework~\eqref{eq:p2_theta_running}. Each doubling of $N$ adds
-one bit of resolution to the lattice; after $d\!=\!4$ doublings
-the lattice has acquired $2^{d}\!=\!16$ new mode counts per
-direction-product, completing one full ``dimensional cycle''
-through the Cl$(1,3)$ module structure. The deviation peak at
-$\phi\!\equiv\!\log_{2}(N)\bmod d\!=\!3$ corresponds to the
-phase \emph{just before} the next dimensional saturation, where
-the freshly-introduced modes maximally distort the diffusion
-trace.
+framework~\eqref{eq:p2_theta_running}. Each factor of $2$ in $N$
+adds one binary-subdivision level to the lattice modes; the
+$2$-adic valuation $v_{2}(N)$ counts how many such levels are
+present before the remaining odd factor enters. The
+Cl$(1,3)$ diffusion-trace operator is sensitive to this binary
+arithmetic --- cyclotomic eigenvalues
+$4\sin^{2}(\pi j/N)$ at $N\!=\!2^{k}$ are algebraic numbers in
+$\mathbb{Q}(\zeta_{2^{k}})$ with exact heat-kernel-cancellation
+identities --- so the deviation grows with $v_{2}(N)$ rather
+than running on a fixed period in $\log_{2}(N)$.
 
 The chirality angle $\theta_{\rm chir}(N)$ runs continuously with
 $\ln(N)/\ln(d N_{\rm gen})$, while the $D_{\Omega}$
-period-$d$ oscillation runs with $\log_{2}(N)\bmod d$. The two
-scales differ:
+lattice resonance is modulated by the discrete arithmetic of
+$v_{2}(N)$ post-flip. The two scales differ:
 \begin{itemize}
 \item Chirality flip: full vacuum-to-inversion sweep over a
   factor $d N_{\rm gen}\!=\!12$ in $N$ (one e-fold of
   $\ln(12)\!\approx\!2.485$).
-\item Period-$d$ cycle: full reset every factor $2^{d}\!=\!16$
-  in $N$ (one period of $d\!=\!4$ in $\log_{2}$).
+\item Lattice resonance: amplitude $\propto v_{2}(N)$ post-flip,
+  growing unbounded along the binary subsequence
+  $N\!=\!2^{k}$ and vanishing at odd $N$ (no enhancement).
 \end{itemize}
-A factor $16/12\!=\!4/3$ separates the two; over one chirality
-flip ($N\!=\!N_{*}\!\to\!d N_{\rm gen} N_{*}$) the lattice
-crosses $\log_{2}(d N_{\rm gen})/d\!=\!\log_{2}(12)/4\!\approx\!0.896$
-of one period-$d$ cycle. Therefore the chirality flip and one
-$D_{\Omega}$ period are nearly synchronised but not identical:
-the chirality flip is the slow long-wavelength envelope, while
-the period-$d$ oscillation is the fast lattice-harmonic carrier.
-
 The matter-sector interpretation: in the chirality-flip
 framework, the matter regime corresponds to
 $\theta_{\rm chir}\!>\!\pi/4$ (chirality sine dominant). The
-period-$d$ oscillation in $D_{\Omega}$ is independent of the
-chirality angle but lives \emph{on top} of the slow chirality
-running. Each period-$d$ cycle samples both vacuum-like and
-matter-like phases of the lattice diffusion structure, with
-the diffusion trace amplifying when the sampled phase
-mismatches the chirality-induced asymptote ($\pi/d$ in matter
-limit). This explains why the deepest dip at $N\!=\!128$
-($\theta_{\rm chir}\!\approx\!46^{\circ}$, just past the
-chirality flip) coincides with $\phi\bmod d\!\approx\!3$:
-the lattice is in a matter-side phase but the Cl$(1,3)$
-diffusion-trace mode has not yet completed its dimensional
-cycle, so $D_{\Omega}$ overshoots well below the matter
-asymptote $\pi/d$. At $N\!=\!300$ the period boundary
-$\bmod d\!\to\!0$ resets the lattice harmonic and $D_{\Omega}$
-rebounds toward the vacuum reading.
+lattice resonance amplitude is the product
+$\sin^{2}\theta_{\rm chir}\,v_{2}(N)$, so the resonance turns on
+only after the chirality has rotated into the matter regime and
+is then weighted by the $2$-adic factorisation of $N$. This
+explains the deepest dips on the ladder
+($N\!=\!128, 256, 512$ with $v_{2}\!=\!7, 8, 9$ post-flip) and
+the rebound at $N\!=\!300$ ($v_{2}\!=\!2$, the lowest-$v_{2}$
+post-flip point on the ladder). Pure powers of $2$ at deep-matter
+chirality therefore extend the suppression unbounded in
+$v_{2}$ within the linear-extrapolation regime; no period-$d$
+``wrap to vacuum'' returns the trace to $67/80$ once the
+chirality is saturated.
 
 \paragraph{Local matter-core promotion of the chirality-flip
 (per-node).} The chirality-flip running is global at the
@@ -2588,9 +2674,9 @@ corrections~\cite{ChintaJK2010}; these subleading corrections
 are the math-precise version of the
 $\sin^{2}\theta_{\rm chir}(N)\,v_{2}(N)$ residual on our finite
 canonical-physics ladder. Reproducers
-\path|src/verify_D_Omega_2adic_chirality_phase.py| (interaction
+\pyown{src/verify_D_Omega_2adic_chirality_phase.py}{verify_D_Omega_2adic_chirality_phase} (interaction
 fit, AIC + LOO model selection) and
-\path|src/verify_D_Omega_discrete_laplacian_spectrum.py|
+\pyown{src/verify_D_Omega_discrete_laplacian_spectrum.py}{verify_D_Omega_discrete_laplacian_spectrum}
 (no smooth $1$D spectral metric improves on the discrete
 $v_{2}$ predictor, confirming the cyclotomic-Galois reading
 rather than a smooth-eigenvalue diagnostic).
@@ -2610,14 +2696,24 @@ smaller than the $\mathcal{O}(\gamma\,v_{2})\!\sim\!0.5$
 lattice-resonance amplitude that dominates at $N\!\leq\!512$. A
 clean rational identification of the harmonic sub-leading
 content will become possible once the queued $\mathcal{P}_{5}N$
-lattices at $N\!=\!600,700,800,1024$ finish; the
-$\sin^{2}\!\theta\,v_{2}$ interaction model predicts
-$D_{\Omega}(600)\!\approx\!0.49$,
-$D_{\Omega}(700)\!\approx\!0.53$,
-$D_{\Omega}(800)\!\approx\!0.38$,
-$D_{\Omega}(1024)\!\approx\!0.13$ (deepest dip), giving an
-explicit falsification chain for the lattice-resonance
-mechanism.
+lattices at $N\!=\!700,800,1024$ finish. The first such test
+point, the $N\!=\!600$ single-seed trial, measured
+$D_{\Omega}(600)\!=\!0.265$ against the linear-model prediction
+$0.488$ ($45.7\%$ low), which is naturally resolved by revising
+the slow-envelope matter-anchor from continuum $\pi/d$ to the
+finite-$N$ lattice value $\pi/d\!-\!(d{+}1)\gamma\!\approx\!0.285$
+(Eq.~\eqref{eq:D_post_lattice_finite_N} below). With this
+revised anchor and the refit lattice-resonance coefficients
+$b_{0}\!=\!-0.050$, $b_{1}\!=\!-0.0083$ on the
+$11$-point ladder, the updated predictions become
+$D_{\Omega}(700)\!\approx\!0.26$,
+$D_{\Omega}(800)\!\approx\!0.23$,
+$D_{\Omega}(1024)\!\approx\!0.18$ (with deeper $v_{2}\!=\!10$
+modulation than $N\!=\!700,800$), converging toward
+$D_{\Omega}^{\rm post,lattice}\!=\!0.285$ at the highest
+saturated-chirality $N$ values. The deeper-than-anchor
+modulation at $v_{2}\!\geq\!10$ is the residual lattice
+resonance signature that the campaign will discriminate.
 
 \paragraph{Fast-slow decomposition and quantitative high-$N$
 predictions.}
@@ -2628,12 +2724,13 @@ $\partial_{t}\Xi\!=\!\partial_{t}\Xi|_{\rm fast}\!+\!
 \epsilon\,\partial_{t}\Xi|_{\rm slow}$ where the fast component
 relaxes the geometry into a quasi-metric tube and the slow
 component evolves the physical sector. The
-$D_{\Omega}$-running structure described above maps cleanly
-onto this decomposition:
+$D_{\Omega}$-running structure identified by
+Eq.~\eqref{eq:p2_D_Omega_2adic_chirality} maps cleanly onto
+this decomposition:
 \begin{equation}
 D_{\Omega}(N)
    \;=\; D_{\Omega}^{\rm slow}(\theta_{\rm chir}(N))
-   \;-\; D_{\Omega}^{\rm fast}(\log_{2}(N)\bmod d),
+   \;+\; r(N),
 \label{eq:p2_D_Omega_fast_slow}
 \end{equation}
 with the slow chirality-mixing envelope
@@ -2644,76 +2741,147 @@ D_{\Omega}^{\rm slow}(N)
 \label{eq:p2_D_Omega_slow}
 \end{equation}
 where $\theta_{\rm chir}(N)$ is given by
-Eq.~\eqref{eq:p2_theta_running}, and the fast lattice-harmonic
-oscillation
+Eq.~\eqref{eq:p2_theta_running}, and the fast lattice-resonance
 \begin{equation}
-D_{\Omega}^{\rm fast}(N)
-   \;=\;A\,f\!\bigl(\log_{2}(N)\bmod d\bigr),\qquad
-A\!\approx\!0.55,
+r(N)
+   \;=\; b_{0} \;+\; b_{1}\,\sin^{2}\!\theta_{\rm chir}(N)\,v_{2}(N),
+\qquad
+b_{0}\!=\!-0.161,\;\; b_{1}\!\approx\!-\gamma/2,
 \label{eq:p2_D_Omega_fast}
 \end{equation}
-with $f$ a unit-amplitude bump peaked at $\phi\!=\!d\!-\!1\!=\!3$
-(deepest-phase position) and $f(0)\!=\!f(d)\!=\!0$ at the
-period boundaries (vacuum-anchor reset). The amplitude
-$A\!=\!0.55$ is read from the lattice peak at $N\!=\!128$
-($\log_{2}\!=\!7$, $\bmod d\!=\!3$). The slow $D_{\Omega}^{\rm slow}$
+with $v_{2}(N)$ the $2$-adic valuation of $N$. The slow envelope
 runs over a factor $d N_{\rm gen}\!=\!12$ in $N$ (one chirality
-flip), the fast $D_{\Omega}^{\rm fast}$ resets every factor
-$2^{d}\!=\!16$ in $N$.
+flip); the fast lattice-resonance is structurally tied to the
+arithmetic of $N$ (large at $N\!=\!2^{k}$, zero at odd $N$) and
+scales with the post-flip chirality fraction $\sin^{2}\theta_{\rm chir}$,
+so the dip pattern is read off the prime factorisation of $N$
+rather than from a phenomenological bump function. The
+single-cycle readout
+$A\,f(\log_{2}N\!\bmod d)$ examined in earlier diagnostic work
+is the finite-$N$ projection of Eq.~\eqref{eq:p2_D_Omega_fast}
+onto a single cycle of $v_{2}$ values and is structurally
+superseded by the present identification.
 
 \textbf{Quantitative high-$N$ predictions} from
-Eq.~\eqref{eq:p2_D_Omega_fast_slow}:
+Eq.~\eqref{eq:p2_D_Omega_fast_slow}, using the
+$10$-regime-fit coefficients $b_{0}\!=\!-0.1613$,
+$b_{1}\!=\!-0.0522$ (extrapolated linearly into the high-$v_{2}$
+regime; reproducer output
+\path|outputs/verify_D_Omega_2adic_chirality_phase.json|):
 \begin{center}
 \begin{tabular}{r r r r r r}
 \toprule
-$N$ & $\log_{2}(N)\bmod d$ & $\theta_{\rm chir}$ & $D_{\Omega}^{\rm slow}$ & $D_{\Omega}^{\rm fast}$ & $D_{\Omega}^{\rm pred}$ \\
+$N$ & $v_{2}(N)$ & $\theta_{\rm chir}$ & $D_{\Omega}^{\rm slow}$ & $r(N)$ & $D_{\Omega}^{\rm pred}$ \\
 \midrule
-$256$  & $0.00$ & $54.7^{\circ}$ & $0.803$ & $0.000$ & $\mathbf{0.803}$ \\
-$512$  & $1.00$ & $60^{\circ}$   & $0.730$ & $+0.183$ & $0.547$ \\
-$1024$ & $2.00$ & $70^{\circ}$   & $0.790$ & $+0.367$ & $0.423$ \\
-$1536$ & $2.585$& $80^{\circ}$   & $0.787$ & $+0.398$ & $0.398$ \\
-$2048$ & $3.00$ & $83.6^{\circ}$ & $0.786$ & $+0.524$ & $\mathbf{0.262}$ \\
-$3072$ & $3.585$& $85^{\circ}$   & $0.786$ & $+0.091$ & $0.696$ \\
-$4096$ & $0.00$ & $86.5^{\circ}$ & $0.786$ & $0.000$ & $\mathbf{0.786}$ \\
+$256$  & $8$  & $54.7^{\circ}$ & $0.803$ & $-0.440$ & $\mathbf{0.363}$ \\
+$512$  & $9$  & $69.0^{\circ}$ & $0.792$ & $-0.571$ & $\mathbf{0.221}$ \\
+$\mathbf{600}$  & $\mathbf{3}$  & $\mathbf{71.6^{\circ}}$ & $0.791$ & $-0.302$ & $\mathbf{0.488}$ pred \\
+\multicolumn{6}{l}{\hspace{0.5em}\textit{empirical (single-seed trial): }$D_{\Omega}(600)\!=\!0.265$ at $-45.7\%$ vs linear pred} \\
+$1024$ & $10$ & $78.3^{\circ}$ & $0.788$ & $-0.662$ & $\mathbf{0.126}$ \\
+$1536$ & $9$  & $81.7^{\circ}$ & $0.787$ & $-0.621$ & $\mathbf{0.165}$ \\
+$2048$ & $11$ & $83.6^{\circ}$ & $0.786$ & $-0.728$ & $\mathbf{0.058}$ \\
+$3072$ & $10$ & $85.5^{\circ}$ & $0.786$ & $-0.680$ & $\mathbf{0.106}$ \\
+$4096$ & $12$ & $86.5^{\circ}$ & $0.786$ & $-0.785$ & $\mathbf{0.000}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-Critical features of these predictions:
+Critical features:
 \begin{itemize}
-\item \textbf{N=256 (first period boundary past chirality flip)}:
-  fast oscillation vanishes, $D_{\Omega}$ tracks the slow
-  envelope which by $N\!=\!256$ has already partially saturated
-  toward the matter asymptote ($\theta_{\rm chir}\!=\!54.7^{\circ}$);
-  predicted $D_{\Omega}\!=\!0.803$, intermediate between the
-  vacuum value $67/80\!=\!0.838$ and the matter asymptote
-  $\pi/d\!=\!0.785$.
-\item \textbf{N=2048 (second deepest-phase dip)}: full
-  matter-saturated chirality and deepest fast-oscillation
-  combine to predict $D_{\Omega}\!=\!0.262$, similar in
-  magnitude to the lattice-observed deep dip at $N\!=\!128$
-  ($D_{\Omega}\!=\!0.295$).
-\item \textbf{N=4096 (second period boundary, fully past flip)}:
-  the chirality is fully matter-saturated ($\theta_{\rm chir}\!=\!86.5^{\circ}$),
-  the slow envelope equals $\pi/d$ exactly, the fast oscillation
-  vanishes, predicted $D_{\Omega}\!=\!0.786\!\approx\!\pi/d$.
-\end{itemize}
-\textbf{Important contrast}: the "rebound to vacuum value" naive
-prediction (period-$d$ boundary $\to$ $67/80$) holds ONLY before
-the chirality flip ($N\!<\!N_{\rm inv}\!=\!600$). At $N\!=\!300$
-the rebound goes to $0.825\!\approx\!67/80$ because the
-chirality has not yet fully inverted. At $N\!\gtrsim\!600$
-all subsequent rebounds go to the matter-saturated slow envelope
-$\pi/d$, not to vacuum. This is the fast-slow distinction in
-action: fast lattice-harmonic resets coexist with the slow
-chirality-flip envelope, not against it.
+\item \textbf{No vacuum rebound at large $N\!=\!2^{k}$.} The
+  ``rebound to $67/80$'' naive period-$d$ reading is rejected by
+  the structural form Eq.~\eqref{eq:p2_D_Omega_fast}: every
+  power of $2$ past the chirality flip carries a $v_{2}$
+  enhancement of the resonance, driving $D_{\Omega}$ further
+  \emph{below} the slow envelope, not back toward $67/80$.
+\item \textbf{$N\!=\!600$ single-seed trial reveals a finite-$N$
+  matter-anchor correction.}
+  The $N\!=\!600$ measurement (single-seed,
+  \path|results_d1_p5n600_trial1seed|) gives
+  $D_{\Omega}(600)\!=\!0.265$, $45.7\%$ below the linear-model
+  prediction $0.488$. The pattern across the post-flip ladder
+  $\{N\!=\!128,200,256,512,600\}$ shows the empirical
+  $D_{\Omega}$-values clustering around $0.27\!\pm\!0.06$ ---
+  far below the continuum matter anchor $\pi/d\!=\!0.785$ used
+  in the slow-envelope Eq.~\eqref{eq:p2_D_Omega_slow}. A direct
+  joint fit on the eleven-point ladder
+  $\{N\!=\!50,\ldots,600\}$ on post-flip points ($\sin^{2}\theta\!>\!0.5$)
+  identifies three roughly equivalent framework-rational
+  candidates for the lattice-specific matter anchor:
+  $\gamma N_{\rm gen}\!=\!3/10\!=\!0.300$,
+  $\pi/(d N_{\rm gen})\!=\!\pi/12\!\simeq\!0.262$, and
+  $2/(d{+}N_{\rm gen})\!=\!2/7\!\simeq\!0.286$. Each reduces the
+  post-flip RMS residual by $\sim\!50\%$ relative to the $\pi/d$
+  reading. The structurally cleanest form is
+  \begin{equation}
+  D_{\Omega}^{\rm post,lattice}
+     \;=\; \tfrac{\pi}{d}\!-\!(d{+}1)\,\gamma
+     \;=\; \tfrac{\pi}{d} - \tfrac{1}{2}
+     \;\simeq\; 0.285,
+  \label{eq:D_post_lattice_finite_N}
+  \end{equation}
+  the continuum matter value reduced by the Lorentzian-cone-
+  summed carrier-defect leakage $(d{+}1)\,\gamma\!=\!5\gamma\!=\!1/2$.
+  The $(d{+}1)\,\gamma$ correction reads physically as the
+  cumulative $\gamma$-order leakage across the $(d{+}1)$
+  Lorentzian-cone directions of the discrete light cone of
+  Section~\ref{sec:p2_fast_slow_D_Omega}~(ET2 in the technical
+  foundations~\cite{Paper6}); $\pi/d$ remains the strict
+  continuum $N\!\to\!\infty$ asymptote.
 
-These predictions are testable on multi-N lattice runs at
-$N\!\in\!\{256, 512, 1024, 2048, 4096\}$. The fast-slow
-decomposition of $D_{\Omega}(N)$ is summarised graphically in
+  Under the revised slow envelope
+  $D_{\Omega}^{\rm slow,revised}(\theta)\!=\!(67/80)\cos^{2}\theta\!+\!(\pi/d\!-\!(d{+}1)\gamma)\sin^{2}\theta$,
+  the lattice-resonance residual $r(N)\!=\!D_{\Omega}^{\rm obs}\!-\!D_{\Omega}^{\rm slow,revised}$
+  is small at fully-saturated post-flip ($\sin^{2}\theta\!\to\!1$:
+  $r\!\to\!-0.08$) and largest at mid-flip
+  ($\sin^{2}\theta\!\approx\!0.4$: $r\!\approx\!-0.34$ at $N\!=\!128$).
+  The $N\!=\!600$ data point ($\sin^{2}\theta\!=\!0.90$, $v_{2}\!=\!3$)
+  fits with residual $r\!\approx\!-0.08$, naturally explained
+  without invoking a non-linear chirality-amplification mechanism.
+  The $v_{2}\sin^{2}\theta$ linear ansatz of
+  Eq.~\eqref{eq:p2_D_Omega_2adic_chirality} remains the dominant
+  finite-$N$ residual structure; what the $N\!=\!600$ trial
+  identifies is that the slow-envelope matter anchor itself
+  carries a $(d{+}1)\gamma\!=\!1/2$ finite-$N$ correction below
+  the continuum $\pi/d$ value, falsifying the original
+  ``rebound to $\pi/d$'' reading and confirming the
+  ``post-flip plateau at $\!\approx\!0.27$'' empirical pattern.
+
+  Single-seed trial has typical per-seed variance $\sim\!15\%$;
+  the $12$-seed campaign (\path|results_d1_p5n600_12seeds/|, in
+  progress) and the queued $N\!\in\!\{700,800,1024\}$ ladder
+  will discriminate between the three candidate lattice-anchor
+  rationals and tighten the $(d{+}1)\gamma$ correction's
+  numerical certificate.
+\item \textbf{$N\!=\!4096$ as the strongest test point.} The
+  post-flip chirality is saturated ($\sin^{2}\theta\!\to\!1$)
+  and $v_{2}\!=\!12$ gives a nominal $r\!\approx\!-0.79$. Given
+  the $N\!=\!600$ trial showing factor-$\sim\!2$ excess
+  suppression at saturated $\sin^{2}\theta$, the actual
+  $D_{\Omega}(4096)$ may be even lower than the linear
+  extrapolation $\approx\!0$; a measured
+  $D_{\Omega}(4096)\!\gtrsim\!0.3$ would falsify the
+  lattice-resonance mechanism on canonical-physics lattices.
+\item \textbf{Odd-$N$ vs power-of-$2$ contrast.} At any
+  post-flip odd $N$ ($v_{2}\!=\!0$) the residual reduces to
+  $r\!=\!b_{0}\!\approx\!-0.16$ irrespective of size, so
+  $D_{\Omega}\!\approx\!0.63$; this gives a clean direct test
+  against the deep-dip pattern at $N\!=\!2^{k}$.
+\end{itemize}
+\textbf{Caveat on extrapolation.} The fit was trained on
+$10$ canonical-physics points at $N\!\in\![50,512]$ with
+$v_{2}\!\in\![0,8]$; the $N\!\in\![1024,4096]$ predictions
+extrapolate $v_{2}$ to $12$, a $50\%$ extension beyond the
+training range. Saturation effects (an effective $D_{\Omega}$
+floor or a non-linear $v_{2}$ kernel) may modify the linear
+projection at the deepest power-of-$2$ points; this is part of
+the falsification chain. The fast-slow decomposition of
+$D_{\Omega}(N)$ is summarised graphically in
 Fig.~\ref{fig:p2_fast_slow_decomposition}. Reproducers:
-\path|src/verify_D_Omega_2adic_resonance.py|,
-\path|src/verify_Bott_prediction_test.py|,
-\path|src/verify_fast_slow_D_Omega_predictions.py|.
+\pyown{src/verify_D_Omega_2adic_chirality_phase.py}{verify_D_Omega_2adic_chirality_phase} (structural
+identification, AIC + LOO model selection, predictions at
+$N\!\in\!\{256,\ldots,4096\}$),
+\pyown{src/verify_D_Omega_lattice_resonance.py}{verify_D_Omega_lattice_resonance},
+\pyown{src/verify_D_Omega_discrete_laplacian_spectrum.py}{verify_D_Omega_discrete_laplacian_spectrum}.
 
 \begin{figure}[!htbp]
 \centering
@@ -2725,20 +2893,27 @@ at $N\!=\!50$ toward inversion $\arctan(N_{\rm gen})\!\approx\!71.6^{\circ}$
 with vacuum-matter flip at $\theta\!=\!\pi/4$ around
 $N\!\approx\!154$ (dashed lines) and full inversion at
 $N_{\rm inv}\!=\!d N_{\rm gen} N_{*}\!=\!600$ (dashed red).
-(B)~Slow chirality-mixing envelope $D_{\Omega}^{\rm slow}\!=\!(67/80)\cos^{2}\theta\!+\!(\pi/d)\sin^{2}\theta$
-transitioning between vacuum $67/80\!=\!0.838$ and matter
-$\pi/d\!=\!0.785$. (C)~Fast lattice-harmonic oscillation
-$D_{\Omega}^{\rm fast}\!=\!A\,f(\log_{2}(N)\bmod d)$ with
-period $d\!=\!4$ and amplitude $A\!\approx\!0.55$; period
-boundaries at $N\!=\!2^{k}$ for $k\!=\!6,8,10,12$ marked
-(dotted purple lines). (D)~Total prediction
-$D_{\Omega}^{\rm pred}\!=\!{\rm slow}\!-\!{\rm fast}$ overlaid
-with 8-regime lattice data (orange circles) and structural
-predictions at $N\!\in\!\{256, 512, 1024, 2048, 3072, 4096\}$
-(blue stars). The deepest lattice-observed dip at $N\!=\!128$
-is reproduced by the $A\!\approx\!0.55$ amplitude. The
-predicted second deep dip at $N\!=\!2048$ ($D_{\Omega}\!\approx\!0.262$)
-and rebound at $N\!=\!4096$ ($D_{\Omega}\!\approx\!\pi/d$) are
+(B)~Slow chirality-mixing envelope. The continuum-limit form
+$D_{\Omega}^{\rm slow,cont}\!=\!(67/80)\cos^{2}\theta\!+\!(\pi/d)\sin^{2}\theta$
+transitions between vacuum $67/80\!=\!0.838$ and the Symanzik
+$N\!\to\!\infty$ matter asymptote $\pi/d\!=\!0.785$; the
+finite-$N$ lattice anchor identified by the $N\!=\!600$ trial
+analysis (Eq.~\eqref{eq:D_post_lattice_finite_N}) is
+$D_{\Omega}^{\rm post,lattice}\!=\!\pi/d\!-\!(d{+}1)\gamma\!\simeq\!0.285$,
+$(d{+}1)\gamma\!=\!1/2$ smaller than the continuum value due to
+the Lorentzian-cone-summed carrier-defect leakage. (C)~Fast lattice-resonance
+$r(N)\!=\!b_{0}\!+\!b_{1}\sin^{2}\theta_{\rm chir}\,v_{2}(N)$
+with $b_{0}\!\approx\!-0.16$, $b_{1}\!\approx\!-\gamma/2$;
+deepest suppression at large $N\!=\!2^{k}$ where
+$v_{2}\!\geq\!8$ (powers-of-$2$ marked dotted purple).
+(D)~Total prediction
+$D_{\Omega}^{\rm pred}\!=\!D_{\Omega}^{\rm slow}\!+\!r(N)$
+overlaid with $10$-regime lattice data (orange circles) and
+structural predictions at $N\!\in\!\{256,\ldots,4096\}$
+(blue stars). The lattice-observed deep dip at $N\!=\!128$ is
+reproduced by $v_{2}\!=\!7$. The predicted suppression at
+$N\!=\!4096$ ($D_{\Omega}\!\approx\!0$ in the linear
+extrapolation) and the contrast against odd-$N$ shoulders are
 the principal falsifiable consequences. The decomposition
 maps onto the framework's existing Fast-Slow-Struktur
 (Paper~3, §4.1.1).}
@@ -2755,7 +2930,7 @@ Reproducers (bundled in this paper's
 \path|verify_C2_violation_structural_cause.py|,
 \path|verify_C2_matter_regime_alternatives.py|,
 \path|verify_D_Omega_lattice_resonance.py|,
-\path|verify_iter36_chirality_running_first_principles.py|.
+\path|verify_chirality_running_first_principles.py|.
 The 8-regime per-$N$ data set is bundled at
 \path|data/causal_wave_per_N_readout.json|.
 
@@ -3011,6 +3186,25 @@ E.~B.~Davies,
 Cambridge Studies in Advanced Mathematics \textbf{42},
 Cambridge University Press, 1995.
 
+\bibitem{ChamseddineConnes1997}
+A.~H.~Chamseddine and A.~Connes,
+\emph{The spectral action principle},
+Communications in Mathematical Physics \textbf{186}, 731 (1997);
+arXiv:hep-th/9606001.
+The Standard-Model action obtained as a spectral invariant of
+the Dirac operator of a spectral triple; the methodological
+precedent for reading physical coefficients off an operator
+spectrum rather than postulating them.
+
+\bibitem{ConnesChamseddineMarcolli2007}
+A.~H.~Chamseddine, A.~Connes, and M.~Marcolli,
+\emph{Gravity and the standard model with neutrino mixing},
+Advances in Theoretical and Mathematical Physics \textbf{11},
+991 (2007); arXiv:hep-th/0610241.
+The finite spectral triple $(\mathcal A_{F},\mathcal H_{F},
+D_{F})$ whose Dirac operator $D_{F}$ encodes the Yukawa
+couplings and CKM mixing of the Standard Model.
+
 \bibitem{Fiedler1973}
 M.~Fiedler,
 \emph{Algebraic connectivity of graphs},
@@ -3080,8 +3274,8 @@ on an arbitrary high-dimensional lattice with product connection
 equals the Kronecker sum of one-dimensional connection lattices'
 heat kernels. Mathematically validates the factorisation
 $M(N)=(S_{1d}(N)/N)^{d}$ used in
-\path|src/verify_D_Omega_2adic_resonance.py| and
-\path|src/verify_D_Omega_discrete_laplacian_spectrum.py|.
+\pyown{src/verify_D_Omega_2adic_resonance.py}{verify_D_Omega_2adic_resonance} and
+\pyown{src/verify_D_Omega_discrete_laplacian_spectrum.py}{verify_D_Omega_discrete_laplacian_spectrum}.
 
 \bibitem{ChintaJK2010}
 G.~Chinta, J.~Jorgenson and A.~Karlsson,

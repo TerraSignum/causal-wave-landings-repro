@@ -1,4 +1,25 @@
-r"""Fast-slow decomposition of D_Omega(N) and explicit predictions
+r"""DEPRECATED (2026-05-15) — superseded by
+verify_D_Omega_2adic_chirality_phase.py.
+
+This script implements the 2026-05-06 phenomenological readout
+D_Omega^fast = A * f(log_2(N) mod d) with A ~ 0.55 (peak fitted at
+phi=3 from N=128). On the 10-regime canonical-physics ladder the
+structural reading is instead
+
+  r(N) := D_Omega(N) - D_Omega^slow(theta_chir(N))
+        = b_0 + b_1 * sin^2(theta_chir(N)) * v_2(N),
+
+with b_0 ~ -0.16, b_1 ~ -gamma/2 (AIC + LOO-RMSE winner over the
+period-d ansatz). The abstract bump f(.) and the amplitude A=0.55
+are the finite-N projection of this structural form. Use
+verify_D_Omega_2adic_chirality_phase.py for the current model and
+the manuscript-cited high-N prediction table.
+
+The original docstring follows for historical reference.
+
+----
+
+Fast-slow decomposition of D_Omega(N) and explicit predictions
 at N=256, 512, 1024, 2048, 4096.
 
 Framework Fast-Slow-Struktur (Paper 03 Feldtheorie-Notebook §4.1.1):

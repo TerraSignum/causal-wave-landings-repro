@@ -270,7 +270,7 @@ def main():
             f"+ {b_io_1:+.4f} * sin^2(theta) * v_2):")
     print(f"{'N':>5} {'v2':>3} {'theta':>7} {'D_slow':>7} "
             f"{'r_pred(IO)':>11} {'D_total':>9}")
-    targets = [600, 700, 800, 1024, 2048]
+    targets = [256, 512, 600, 700, 800, 1024, 1536, 2048, 3072, 4096]
     next_preds = []
     for n in targets:
         th = theta_chir(n)
